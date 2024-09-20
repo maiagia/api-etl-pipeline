@@ -1,4 +1,8 @@
-# api-etl-project
+# Tech Challenge
+Kleryton de Souza Maria
+Maiara Giavoni
+Lucas Paim de Paula
+Rafael Tafelli dos Santos
 
 ## Descrição
 
