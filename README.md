@@ -8,7 +8,7 @@ Este projeto faz parte de um desafio técnico e visa fornecer uma solução auto
 
 ## Estrutura do Repositório
 
-# api-etl-project
+# api-etl-pipeline
 
 ## Descrição
 
@@ -88,7 +88,7 @@ A API é projetada para ser escalável e flexível, permitindo que os dados seja
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/api-etl-project.git
+   git clone https://github.com/seu-usuario/api-etl-pipeline.git
    cd api-etl-project
 
 2. Crie um ambiente virtual (opcional, mas recomendado):
