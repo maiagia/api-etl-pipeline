@@ -27,7 +27,7 @@ api-etl-project/
 │
 └── etl/                     # Código relacionado aos processos de ETL
     ├── __init__.py          # Indica que 'etl' é um pacote Python # api-etl-project
-
+```
 ## Objetivo
 
 O objetivo principal deste projeto é a criação de uma **API RESTful** em Python que:
