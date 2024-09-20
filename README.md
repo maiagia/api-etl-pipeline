@@ -1,7 +1,7 @@
 # Tech Challenge
-Kleryton de Souza Maria
-Maiara Giavoni
-Lucas Paim de Paula
+Kleryton de Souza Maria,
+Maiara Giavoni,
+Lucas Paim de Paula,
 Rafael Tafelli dos Santos
 
 ## Descrição
