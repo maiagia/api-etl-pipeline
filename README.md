@@ -1,18 +1,10 @@
 # Tech Challenge
+Membros:
 Kleryton de Souza Maria,
 Maiara Giavoni,
 Lucas Paim de Paula,
 Rafael Tafelli dos Santos
 
-## Descrição
-
-Este repositório contém o desenvolvimento de uma **API pública** destinada a consultar dados de vitivinicultura da **Embrapa**, extraídos do site [VitiBrasil](http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01). A API realiza consultas automáticas nas abas de **Produção** e **Exportação**, disponibilizando esses dados para uso posterior em modelos de **Machine Learning**. Além disso, o projeto inclui scripts de **ETL (Extract, Transform, Load)** para manipular e preparar os dados extraídos.
-
-Este projeto faz parte de um desafio técnico e visa fornecer uma solução automatizada para a coleta, processamento e disponibilização de dados de vitivinicultura.
-
-## Estrutura do Repositório
-
-# api-etl-pipeline
 
 ## Descrição
 
@@ -36,28 +28,6 @@ api-etl-project/
 └── etl/                     # Código relacionado aos processos de ETL
     ├── __init__.py          # Indica que 'etl' é um pacote Python # api-etl-project
 
-## Descrição
-
-Este repositório contém o desenvolvimento de uma **API pública** destinada a consultar dados de vitivinicultura da **Embrapa**, extraídos do site [VitiBrasil](http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01). A API realiza consultas automáticas nas abas de **Produção** e **Exportação**, disponibilizando esses dados para uso posterior em modelos de **Machine Learning**. Além disso, o projeto inclui scripts de **ETL (Extract, Transform, Load)** para manipular e preparar os dados extraídos.
-
-Este projeto faz parte de um desafio técnico e visa fornecer uma solução automatizada para a coleta, processamento e disponibilização de dados de vitivinicultura.
-
-## Estrutura do Repositório
-
-```plaintext
-api-etl-project/
-│
-├── README.md                # Documentação do projeto
-├── .gitignore               # Arquivo de ignorados para Git
-├── requirements.txt         # Dependências do projeto
-├── api/                     # Código relacionado à API
-│   ├── __init__.py          # Indica que 'api' é um pacote Python
-│   ├── producao.py          # API para consultar dados de Produção
-│   ├── exportacao.py        # API para consultar dados de Exportação
-│
-└── etl/                     # Código relacionado aos processos de ETL
-    ├── __init__.py          # Indica que 'etl' é um pacote Python
-```
 ## Objetivo
 
 O objetivo principal deste projeto é a criação de uma **API RESTful** em Python que:
