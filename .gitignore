@@ -1,0 +1,42 @@
+# Diretórios de ambientes virtuais
+venv/
+.env/
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+bin/
+var/
+sdist/
+*.log
+
+# Arquivos de logs
+*.log
+
+# Pytest cache
+.pytest_cache/
+
+# Arquivos de cache do Python
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+__pycache__/
+
+# Arquivos de configurações e credenciais
+.env
+.env.local
+*.env
+
+# Configurações de IDEs (caso use)
+.vscode/
+.idea/
+
+# Configurações de dependências
+Pipfile
+Pipfile.lock
+poetry.lock
