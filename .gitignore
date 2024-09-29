@@ -13,6 +13,7 @@ bin/
 var/
 sdist/
 *.log
+etl/venv/
 
 # Arquivos de logs
 *.log
