@@ -1,5 +1,5 @@
 # Diretórios de ambientes virtuais
-venv/
+.venv/
 .env/
 __pycache__/
 *.py[cod]
