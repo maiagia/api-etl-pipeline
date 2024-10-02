@@ -133,10 +133,10 @@ api-etl-pipeline/
 ## Arquitetura
 A arquitetura do pipeline ETL é composta pelos seguintes componentes:
 
-                        +--------------------------------+
-                        |   APIs de Dados (Embrapa)      |
+                        +---------------------------------+
+                        |   APIs de Dados (Embrapa)       |
                         |(Produção e Exportação de Vinhos)|
-                        +---------------+----------------+
+                        +---------------+-----------------+
                                         |
                                         V
                         +-----------------------------+
@@ -145,28 +145,28 @@ A arquitetura do pipeline ETL é composta pelos seguintes componentes:
                         +-----------------------------+
                                         |
                                         V
-                        +-----------------------------+
+                        +------------------------------+
                         |    Transformação de Dados    |
                         |   (Modulo transform.py)      |
-                        +-----------------------------+
+                        +------------------------------+
                                         |
                                         V
-                        +-----------------------------+
+                        +------------------------------+
                         |  Carga nos Arquivos de Saída |
                         |     (Modulo load.py)         |
-                        +-----------------------------+
+                        +------------------------------+
                                         |
                                         V
                         +-----------------------------+
                         |  Arquivos de Saída (Output)  |
-                        |    (Transformações finais)   |
+                        |                              |
                         +-----------------------------+
                                         |
                                         V
-                        +-----------------------------+
-                        |     Previsão de Tendências   |
+                        +--------------------------------+
+                        |     Previsão de Tendências     |
                         |  (Modulo prediction.py/Prophet)|
-                        +-----------------------------+
+                        +--------------------------------+
 
 
 
