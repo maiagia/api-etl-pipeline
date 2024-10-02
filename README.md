@@ -72,5 +72,28 @@ Certifique-se de ter as seguintes ferramentas instaladas:
    ```bash
    pip install -r requirements.txt
 
+## Configuração
+Configure o arquivo config.yaml com os detalhes das APIs e do banco de dados:
+
+[ATUALIZAR QUANDO TIVER NO REPO]
+
+## Estrutura do Projeto
+api-etl-pipeline/
+├── config.yaml
+├── main.py
+├── etl/
+│   ├── extract.py
+│   ├── transform.py
+│   └── load.py
+├── prophet/
+│   └── prediction.py
+├── tests/
+│   └── test_pipeline.py
+├── requirements.txt
+└── README.md
+
+
+
+
 
 
