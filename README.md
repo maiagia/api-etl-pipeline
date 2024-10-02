@@ -1,27 +1,26 @@
 # Tech Challenge
-Membros:
-Kleryton de Souza Maria,
-Maiara Giavoni,
-Lucas Paim de Paula,
+Membros:<br/> 
+Kleryton de Souza Maria,<br/> 
+Maiara Giavoni,<br/> 
+Lucas Paim de Paula,<br/> 
 Rafael Tafelli dos Santos
 
 
-# API ETL Pipeline - Previsão de Produção e Exportação
+# Previsão de Produção e Exportação de Vitivinicultura
 
-Este projeto implementa um pipeline ETL (Extract, Transform, Load) para coletar e transformar dados de APIs relacionadas à *Produção* e *Exportação* de produtos agrícolas, permitindo prever tendências de produção e exportação ao longo do tempo. Os dados são extraídos de um site especializado no monitoramento de dados do setor agrícola, oferecendo uma visão robusta para análises estratégicas.
+Este projeto implementa um pipeline ETL (Extract, Transform, Load) para coletar e transformar dados relacionados à vitivinicultura, disponibilizados pela *Embrapa* (Empresa Brasileira de Pesquisa Agropecuária). O objetivo é analisar e prever tendências de produção e exportação de produtos derivados da vitivinicultura, como vinhos e sucos, ajudando empresas a otimizar suas operações no setor.
 
 ## Visão de Negócio
 
-Em um mundo cada vez mais globalizado, entender as tendências de produção e exportação é essencial para empresas que operam no setor agrícola e de bebidas, como vinícolas e exportadores de suco. Este pipeline permite que os dados de produção (em litros) e exportação (em quilogramas e valor em dólares) sejam analisados de forma automatizada. A partir dessa análise, as empresas podem:
+A análise e previsão da produção de vinhos, sucos e outros produtos derivados da uva são fundamentais para vinícolas e exportadores do setor. Os dados disponíveis no site da *Embrapa* proporcionam informações valiosas sobre a produção e exportação do Brasil, um dos principais países produtores de vinho. Com este pipeline, empresas podem:
 
-- Identificar aumentos ou quedas de produção ao longo do tempo.
-- Antecipar a demanda por exportações em mercados internacionais.
-- Ajustar estratégias de logística e venda com base em previsões de mercado.
-- Maximizar lucros com a exportação para os países mais rentáveis.
+- Monitorar o desempenho de sua produção ao longo do tempo.
+- Planejar melhor suas exportações com base nas previsões de produção e demanda global.
+- Aumentar a eficiência logística e comercial, otimizando o volume de exportações.
 
 ## Valor Gerado
 
-Com este pipeline, a empresa pode tomar decisões estratégicas baseadas em dados históricos e previsões futuras, permitindo ajustar suas operações para aumentar a competitividade no mercado global. Isso melhora a eficiência operacional, auxilia na identificação de oportunidades de crescimento, e mitiga riscos associados à variação de oferta e demanda.
+Este pipeline ajuda a transformar dados de produção e exportação em insights práticos, permitindo às empresas tomar decisões estratégicas baseadas em análises preditivas. Isso inclui identificar tendências sazonais, ajustar a capacidade de produção, e otimizar a venda de produtos para mercados com maior retorno.
 
 ## Sumário
 
@@ -38,7 +37,7 @@ Com este pipeline, a empresa pode tomar decisões estratégicas baseadas em dado
 
 ## Descrição do Projeto
 
-O pipeline ETL coleta dados de APIs que oferecem informações sobre a produção agrícola e as exportações realizadas pela empresa para diferentes países. O site da API é especializado na divulgação de estatísticas agrícolas, como volumes de produção de vinhos e sucos, e volumes exportados para mercados internacionais. Os dados extraídos são transformados e organizados em arquivos de saída, permitindo que análises preditivas sejam realizadas usando o modelo *Prophet*.
+O pipeline ETL coleta dados de vitivinicultura disponíveis no [site da Embrapa](http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01). Esses dados incluem informações sobre a produção agrícola de vinhos e sucos, bem como sobre as exportações para diversos países. O pipeline transforma esses dados em arquivos de saída processados, permitindo a previsão de tendências futuras com o uso do modelo *Prophet*.
 
 ### Variáveis de Previsão
 
@@ -53,7 +52,7 @@ As variáveis utilizadas para as previsões de produção e exportação incluem
    - **Quantidade (Kg)**: Quantidade de exportação em quilogramas.
    - **Valor (US$)**: Valor em dólares gerado pela exportação.
 
-Essas variáveis são usadas para prever tendências de produção e exportação ao longo do tempo, ajudando a empresa a ajustar sua estratégia de mercado.
+Essas variáveis são usadas para prever tendências de produção e exportação ao longo do tempo, ajudando a empresa a ajustar suas estratégias de mercado e operação.
 
 ## Pré-requisitos
 
@@ -79,8 +78,20 @@ Certifique-se de ter as seguintes ferramentas instaladas:
    git clone https://github.com/maiagia/api-etl-pipeline.git
    cd api-etl-pipeline
 
+2. Crie um ambiente virtual separado para o ETL e ative-o:
+
+   ```bash
+   python3 -m venv etl-venv
+   source etl-venv/bin/activate
+
+3. Instale as dependências:
+
+   ```bash
+   pip install -r requirements.txt
 
 
+
+   
 
 
 
