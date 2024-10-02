@@ -91,13 +91,47 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 
 ## Configuração
 Configure o arquivo config.yaml com os detalhes das APIs:
----
+
+```yaml
 api:
   producao_url: "http://vitibrasil.cnpuv.embrapa.br/api/producao"
   exportacao_url: "http://vitibrasil.cnpuv.embrapa.br/api/exportacao"
   headers:
     Authorization: "Bearer <API_KEY>"
----
+```
+
+## Estrutura do Projeto
+
+```
+api-etl-pipeline/
+├── config.yaml
+├── etl/
+│   ├── data/
+│   │   └── (Arquivos de dados brutos extraídos das APIs)
+│   ├── output/
+│   │   └── (Arquivos processados com agregações e transformações)
+│   ├── main.py
+│   ├── notebook_etl.ipynb
+│   ├── extract.py
+│   ├── transform.py
+│   └── load.py
+├── prophet/
+│   └── prediction.py
+├── tests/
+│   └── test_pipeline.py
+├── requirements.txt
+└── README.md
+```
+## Módulos
+
+- `extract.py`: Coleta dados das APIs da Embrapa para produção e exportação.
+- `transform.py`: Processa e limpa os dados brutos para uso em análises.
+- `load.py`: Armazena os dados transformados em arquivos de saída na pasta etl/output.
+- `notebook_etl.ipynb`: Uma versão em Jupyter do pipeline ETL para exploração e visualização.
+- `prediction.py`: Executa previsões de tendências com o modelo Prophet. (Será implementado em um MVP2)
+
+## Arquitetura
+A arquitetura do pipeline ETL é composta pelos seguintes componentes:
 
 
 
