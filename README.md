@@ -32,8 +32,6 @@ Este pipeline ajuda a transformar dados de produção e exportação em insights
 - [Arquitetura](#arquitetura)
 - [Execução](#execução)
 - [Testes](#testes)
-- [Contribuições](#contribuições)
-- [Licença](#licença)
 
 ## Descrição do Projeto
 
@@ -167,6 +165,31 @@ A arquitetura do pipeline ETL é composta pelos seguintes componentes:
                         |     Previsão de Tendências     |
                         |  (Modulo prediction.py/Prophet)|
                         +--------------------------------+
+
+
+## API de Produção 
+A API de produção oferece dados sobre a produção vitivinícola no Brasil, permitindo monitorar volumes de produção de vinhos e sucos ao longo do tempo.
+
+## API de Exportação 
+A API de exportação disponibiliza dados sobre a quantidade de produtos exportados e o valor gerado pelas exportações, permitindo uma análise detalhada do mercado externo.
+
+## Execução
+Para rodar o pipeline ETL e gerar os arquivos de saída:
+
+   ```bash
+   python etl/main.py
+   ```
+Os arquivos processados estarão disponíveis na pasta etl/output.
+
+## Testes
+Para executar os testes unitários:
+
+   ```bash
+   pytest
+   ```
+A cobertura de testes do projeto é de 90%.
+
+
 
 
 
