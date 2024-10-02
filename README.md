@@ -37,15 +37,15 @@ Este pipeline ajuda a transformar dados de produção e exportação em insights
 
 O pipeline ETL coleta dados de vitivinicultura disponíveis no [site da Embrapa](http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01). Esses dados incluem informações sobre a produção agrícola de vinhos e sucos, bem como sobre as exportações para diversos países. O pipeline transforma esses dados em arquivos de saída processados, permitindo a previsão de tendências futuras com o uso do modelo *Prophet*.
 
-### Variáveis de Previsão
+**Variáveis de Previsão**:
 
 As variáveis utilizadas para as previsões de produção e exportação incluem:
 
-** 1. *Produção*:**
+** 1. Produção:**
    - **Produto**: Tipo de produto (ex: Vinho de mesa, Vinho fino, Suco, etc.).
    - **Quantidade (L)**: Quantidade de produção em litros para cada tipo de produto.
 
-** 2. *Exportação*:**
+** 2. Exportação:**
    - **Países**: Países para onde os produtos foram exportados.
    - **Quantidade (Kg)**: Quantidade de exportação em quilogramas.
    - **Valor (US$)**: Valor em dólares gerado pela exportação.
