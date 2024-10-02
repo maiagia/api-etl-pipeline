@@ -8,7 +8,6 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from src.main import (
     spark_context_create,
-    read_source,
     transform_producao,
     transform_exportacao,
     check_empty_df,
