@@ -61,4 +61,17 @@ Certifique-se de ter as seguintes ferramentas instaladas:
    git clone https://github.com/maiagia/api-etl-pipeline.git
    cd api-etl-pipeline
 
+2. Crie um ambiente virtual e ative-o:
+
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+
+3. Instale as dependências:
+
+   ```bash
+   pip install -r requirements.txt
+
+
+
 
