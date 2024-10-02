@@ -1,29 +1,41 @@
 from pyspark.sql import SparkSession, DataFrame, functions as F
 import logging
+import pandas as pd
 import findspark
 
 findspark.init()
 
-# Definibdi padrões de log
+# Defini padrões de log
 MSG_FORMAT = "%(asctime)s %(levelname)s %(name)s: %(message)s"
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 logging.basicConfig(format=MSG_FORMAT, datefmt=DATE_FORMAT)
 logger = logging.getLogger("vitiBrasil")
 logger.setLevel(logging.INFO)
 
-# Função para criar a SparkSession
 def spark_context_create() -> SparkSession:
+    """
+        Função para criar a SparkSession
+        return: SparkSession
+    """
     spark = SparkSession.builder.appName("ETL").getOrCreate()
     return spark
 
-# Função para ler os arquivos de exportação e produção .JSON
 def read_source(spark) -> tuple:
-    df_producao = spark.read.json("../data/exportacao.json")
-    df_exportacao = spark.read.json("../data/producao.json")
+    """
+        Função para ler os arquivos de exportação e produção .JSON
+        spark: SparkSession
+        return: DataFrame
+    """
+    df_exportacao = spark.read.json("../data/exportacao.json")
+    df_producao = spark.read.json("../data/producao.json")
     return df_producao, df_exportacao
 
-# Função para transformar os dados de produção
 def transform_producao(df: DataFrame) -> DataFrame:
+    """
+        Função para transformar os dados de produção
+        df: DataFrame
+        return: DataFrame
+    """
     try:
         df_producao = df.select("PRODUTO", "QUANTIDADE_L").distinct() \
             .withColumnRenamed("PRODUTO", "produto") \
@@ -37,8 +49,12 @@ def transform_producao(df: DataFrame) -> DataFrame:
         logging.error(f"Erro ao transformar DataFrame: {e}")
         raise e
 
-# Função para transformar os dados de exportação
 def transform_exportacao(df: DataFrame) -> DataFrame:
+    """
+        Função para transformar os dados de exportação
+        df: DataFrame
+        return: DataFrame
+    """
     try:
         df_exportacao = df.select("PAISES", "QUANTIDADE_KG", "VALOR_US").distinct() \
             .groupBy("PAISES") \
@@ -52,24 +68,32 @@ def transform_exportacao(df: DataFrame) -> DataFrame:
         logging.error(f"Erro ao transformar DataFrame: {e}")
         raise e
 
-# Verifica se o DataFrame é vazio
 def check_empty_df(df: DataFrame):
+    """
+        Verifica se o DataFrame é vazio
+        df: DataFrame
+    """
     if df.count() == 0:
         raise Exception("DataFrame vazio")
 
-# Salva o DataFrame em um arquivo CSV
 def save_csv(df: DataFrame, df_producao):
+    """
+        Salva o DataFrame em um arquivo CSV
+        df: DataFrame
+    """
     df_pandas = df.toPandas()
     try:
         if df_producao is not None:
             df_pandas.to_csv("../output/dados_producao.csv", index=False, header=True)
-        df_pandas.to_csv("../output/dados_producao.csv", index=False, header=True)
+        df_pandas.to_csv("../output/dados_exportacao.csv", index=False, header=True)
     except Exception as e:
         logging.error(f"Erro ao salvar DataFrame em CSV: {e}")
         raise e
 
-# Função principal
 def job_execution():
+    """
+        Função principal para execução do job
+    """
     logging.info("Criando SparkSession")
     spark = spark_context_create()
     logging.info("SparkSession criada com sucesso")
