@@ -78,7 +78,7 @@ Configure o arquivo config.yaml com os detalhes das APIs e do banco de dados:
 [ATUALIZAR QUANDO TIVER NO REPO]
 
 ## Estrutura do Projeto
-api-etl-pipeline/
+```api-etl-pipeline/
 ├── config.yaml
 ├── main.py
 ├── etl/
@@ -90,7 +90,8 @@ api-etl-pipeline/
 ├── tests/
 │   └── test_pipeline.py
 ├── requirements.txt
-└── README.md
+└── README.md```
+
 
 
 
