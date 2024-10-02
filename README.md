@@ -78,14 +78,29 @@ Configure o arquivo config.yaml com os detalhes das APIs e do banco de dados:
 [ATUALIZAR QUANDO TIVER NO REPO]
 
 ### Estrutura do Projeto
-``` api-etl-pipeline/ ├── config.yaml ├── main.py ├── etl/ │ ├── extract.py │ ├── transform.py │ └── load.py ├── prophet/ │ └── prediction.py ├── tests/ │ └── test_pipeline.py ├── requirements.txt └── README.md ```
+```
+api-etl-pipeline/
+├── config.yaml
+├── main.py
+├── etl/
+│   ├── extract.py
+│   ├── transform.py
+│   └── load.py
+├── prophet/
+│   └── prediction.py
+├── tests/
+│   └── test_pipeline.py
+├── requirements.txt
+└── README.md
+```
 
 ### Módulos
 
-extract.py: Coleta dados das APIs de Produção e Exportação.
-transform.py: Processa os dados brutos para análises.
-load.py: Armazena os dados transformados no banco de dados.
-prediction.py: Realiza a previsão usando o modelo Prophet.
+- `extract.py`: Coleta dados das APIs de Produção e Exportação.
+- `transform.py`: Processa os dados brutos para análises.
+- `load.py`: Armazena os dados transformados no banco de dados.
+- `prediction.py`: Realiza a previsão usando o modelo Prophet. (Será implementado em um MVP2)
+
 
 ### Arquitetura
 
