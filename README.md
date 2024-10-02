@@ -89,6 +89,16 @@ Certifique-se de ter as seguintes ferramentas instaladas:
    ```bash
    pip install -r requirements.txt
 
+## Configuração
+Configure o arquivo config.yaml com os detalhes das APIs:
+---
+api:
+  producao_url: "http://vitibrasil.cnpuv.embrapa.br/api/producao"
+  exportacao_url: "http://vitibrasil.cnpuv.embrapa.br/api/exportacao"
+  headers:
+    Authorization: "Bearer <API_KEY>"
+---
+
 
 
    
