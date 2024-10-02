@@ -41,11 +41,11 @@ O pipeline ETL coleta dados de vitivinicultura disponíveis no [site da Embrapa]
 
 As variáveis utilizadas para as previsões de produção e exportação incluem:
 
-** 1. Produção:**
+1. Produção:
    - **Produto**: Tipo de produto (ex: Vinho de mesa, Vinho fino, Suco, etc.).
    - **Quantidade (L)**: Quantidade de produção em litros para cada tipo de produto.
 
-** 2. Exportação:**
+2. Exportação:
    - **Países**: Países para onde os produtos foram exportados.
    - **Quantidade (Kg)**: Quantidade de exportação em quilogramas.
    - **Valor (US$)**: Valor em dólares gerado pela exportação.
