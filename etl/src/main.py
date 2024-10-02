@@ -1,10 +1,12 @@
 from pyspark.sql import SparkSession, DataFrame, functions as F
 import logging
+import pandas as pd
 import findspark
 
 findspark.init()
 
-# Definibdi padrões de log
+# Defini padrões de log
+
 MSG_FORMAT = "%(asctime)s %(levelname)s %(name)s: %(message)s"
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 logging.basicConfig(format=MSG_FORMAT, datefmt=DATE_FORMAT)
@@ -18,8 +20,8 @@ def spark_context_create() -> SparkSession:
 
 # Função para ler os arquivos de exportação e produção .JSON
 def read_source(spark) -> tuple:
-    df_producao = spark.read.json("../data/exportacao.json")
-    df_exportacao = spark.read.json("../data/producao.json")
+    df_exportacao = spark.read.json("../data/exportacao.json")
+    df_producao = spark.read.json("../data/producao.json")
     return df_producao, df_exportacao
 
 # Função para transformar os dados de produção
@@ -63,7 +65,7 @@ def save_csv(df: DataFrame, df_producao):
     try:
         if df_producao is not None:
             df_pandas.to_csv("../output/dados_producao.csv", index=False, header=True)
-        df_pandas.to_csv("../output/dados_producao.csv", index=False, header=True)
+        df_pandas.to_csv("../output/dados_exportacao.csv", index=False, header=True)
     except Exception as e:
         logging.error(f"Erro ao salvar DataFrame em CSV: {e}")
         raise e
