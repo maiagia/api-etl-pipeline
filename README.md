@@ -6,87 +6,59 @@ Lucas Paim de Paula,
 Rafael Tafelli dos Santos
 
 
-## Descrição
+## Sumário
 
-Este repositório contém o desenvolvimento de uma **API pública** destinada a consultar dados de vitivinicultura da **Embrapa**, extraídos do site [VitiBrasil](http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01). A API realiza consultas automáticas nas abas de **Produção** e **Exportação**, disponibilizando esses dados para uso posterior em modelos de **Machine Learning**. Além disso, o projeto inclui scripts de **ETL (Extract, Transform, Load)** para manipular e preparar os dados extraídos.
+- [Descrição do Projeto](#descrição-do-projeto)
+- [Pré-requisitos](#pré-requisitos)
+- [Instalação](#instalação)
+- [Configuração](#configuração)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Arquitetura](#arquitetura)
+- [Execução](#execução)
+- [Testes](#testes)
+- [Contribuições](#contribuições)
+- [Licença](#licença)
 
-Este projeto faz parte de um desafio técnico e visa fornecer uma solução automatizada para a coleta, processamento e disponibilização de dados de vitivinicultura.
+## Descrição do Projeto
 
-## Estrutura do Repositório
+Este pipeline realiza a extração de dados de APIs, a transformação e a carga em um banco de dados. Com os dados armazenados, previsões são realizadas para analisar tendências de *Produção* e *Exportação* ao longo do tempo, utilizando o modelo preditivo *Prophet*.
 
-```plaintext
-api-etl-project/
-│
-├── README.md                # Documentação do projeto
-├── .gitignore               # Arquivo de ignorados para Git
-├── requirements.txt         # Dependências do projeto
-├── api/                     # Código relacionado à API
-│   ├── __init__.py          # Indica que 'api' é um pacote Python
-│   ├── producao.py          # API para consultar dados de Produção
-│   ├── exportacao.py        # API para consultar dados de Exportação
-│
-└── etl/                     # Código relacionado aos processos de ETL
-    ├── __init__.py          # Indica que 'etl' é um pacote Python # api-etl-project
-```
-## Objetivo
+As variáveis utilizadas para previsão são:
 
-O objetivo principal deste projeto é a criação de uma **API RESTful** em Python que:
-- Consulta dados de vitivinicultura da **Embrapa** nas abas de **Produção** e **Exportação**.
-- Disponibiliza os dados para serem processados por um pipeline de **ETL**, facilitando a preparação para futuras análises ou modelos de **Machine Learning**.
+### 1. *Produção*:
+   - **Produto**: Tipo de produto (ex: Vinho de mesa, Vinho fino, Suco, etc.)
+   - **Quantidade (L)**: Quantidade de produção em litros para cada tipo de produto.
 
-A API é projetada para ser escalável e flexível, permitindo que os dados sejam facilmente ingeridos em uma base de dados para alimentar futuros modelos preditivos.
+### 2. *Exportação*:
+   - **Países**: Países para onde os produtos foram exportados.
+   - **Quantidade (Kg)**: Quantidade de exportação em quilogramas.
+   - **Valor (US$)**: Valor em dólares gerado pela exportação.
 
-## Funcionalidades
+Esses dados são usados para prever tendências de produção e exportação ao longo do tempo.
 
-1. **API de Produção**:
-   - Rota que consulta e retorna os dados de produção de vitivinicultura disponíveis no site da Embrapa.
-   - Código localizado em `api/producao.py`.
+## Pré-requisitos
 
-2. **API de Exportação**:
-   - Rota que consulta e retorna os dados de exportação de vitivinicultura.
-   - Código localizado em `api/exportacao.py`.
+Certifique-se de ter as seguintes ferramentas instaladas:
 
-3. **Processos de ETL**:
-   - **Extração**: Os dados são extraídos da API de Produção e Exportação.
-   - **Transformação**: Limpeza e preparação dos dados para consumo futuro.
-   - **Carregamento**: Os dados podem ser carregados para uma base de dados.
+- [Python 3.8+](https://www.python.org/)
+- [pip](https://pip.pypa.io/en/stable/installing/)
+- Um banco de dados (PostgreSQL, MySQL, etc.)
 
-## Como Executar o Projeto
+### Bibliotecas Necessárias
 
-### Pré-requisitos
+- `requests`: Para chamadas às APIs.
+- `pandas`: Manipulação de dados.
+- `sqlalchemy`: Interação com o banco de dados.
+- `fbprophet`: Previsão de séries temporais.
+- `logging`: Logs do pipeline.
+- `pytest`: Testes unitários.
 
-- **Python 3.8+**
-- **Pip** (gerenciador de pacotes)
-
-### Instalação
+## Instalação
 
 1. Clone o repositório:
+
    ```bash
-   git clone https://github.com/seu-usuario/api-etl-pipeline.git
-   cd api-etl-project
+   git clone https://github.com/maiagia/api-etl-pipeline.git
+   cd api-etl-pipeline
 
-2. Crie um ambiente virtual (opcional, mas recomendado):
-   ```bash
-    python -m venv venv
-    source venv/bin/activate  # No Windows, use: venv\Scripts\activate
-
-3. Instale as dependências:
-    ```bash
-    pip install -r requirements.txt
-
-### Executar a API
-
-1. Navegue até o diretório api:
-   ```bash
-    cd api
-
-2. Execute a API de Produção:
-   ```bash
-    python producao.py
-
-3. Execute a API de Exportação:
-    ```bash
-    python exportacao.py
-
-As APIs estarão disponíveis localmente em http://localhost:5000/.
 
