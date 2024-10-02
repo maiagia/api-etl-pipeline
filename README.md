@@ -1,5 +1,5 @@
 # Tech Challenge
-Membros:<br/> 
+**Membros:**<br/> 
 Kleryton de Souza Maria,<br/> 
 Maiara Giavoni,<br/> 
 Lucas Paim de Paula,<br/> 
@@ -43,11 +43,11 @@ O pipeline ETL coleta dados de vitivinicultura disponíveis no [site da Embrapa]
 
 As variáveis utilizadas para as previsões de produção e exportação incluem:
 
-#### 1. *Produção*:
+** 1. *Produção*:**
    - **Produto**: Tipo de produto (ex: Vinho de mesa, Vinho fino, Suco, etc.).
    - **Quantidade (L)**: Quantidade de produção em litros para cada tipo de produto.
 
-#### 2. *Exportação*:
+** 2. *Exportação*:**
    - **Países**: Países para onde os produtos foram exportados.
    - **Quantidade (Kg)**: Quantidade de exportação em quilogramas.
    - **Valor (US$)**: Valor em dólares gerado pela exportação.
@@ -132,6 +132,42 @@ api-etl-pipeline/
 
 ## Arquitetura
 A arquitetura do pipeline ETL é composta pelos seguintes componentes:
+
+                        +--------------------------------+
+                        |   APIs de Dados (Embrapa)      |
+                        |(Produção e Exportação de Vinhos)|
+                        +---------------+----------------+
+                                        |
+                                        V
+                        +-----------------------------+
+                        |       Extração de Dados      |
+                        |    (Modulo extract.py)       |
+                        +-----------------------------+
+                                        |
+                                        V
+                        +-----------------------------+
+                        |    Transformação de Dados    |
+                        |   (Modulo transform.py)      |
+                        +-----------------------------+
+                                        |
+                                        V
+                        +-----------------------------+
+                        |  Carga nos Arquivos de Saída |
+                        |     (Modulo load.py)         |
+                        +-----------------------------+
+                                        |
+                                        V
+                        +-----------------------------+
+                        |  Arquivos de Saída (Output)  |
+                        |    (Transformações finais)   |
+                        +-----------------------------+
+                                        |
+                                        V
+                        +-----------------------------+
+                        |     Previsão de Tendências   |
+                        |  (Modulo prediction.py/Prophet)|
+                        +-----------------------------+
+
 
 
 
