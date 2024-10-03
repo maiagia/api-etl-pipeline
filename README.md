@@ -131,7 +131,8 @@ api-etl-pipeline/
 ## Arquitetura
 A arquitetura do pipeline ETL é composta pelos seguintes componentes:
 
-![Diagrama sem nome drawio](https://github.com/user-attachments/assets/01d1fa4b-24de-406c-a66e-c2eb1a65b9e8)
+
+![Diagrama sem nome drawio (1)](https://github.com/user-attachments/assets/1839201c-d449-4e85-a8b1-a7bd00fe5a70)
 
 
 ## API de Produção 
