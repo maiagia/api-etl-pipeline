@@ -64,6 +64,7 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 
 - `requests`: Para chamadas às APIs.
 - `pandas`: Manipulação de dados.
+- `pyspark`: Manipulação de dados.
 - `fbprophet`: Previsão de séries temporais.
 - `logging`: Logs do pipeline.
 - `pytest`: Testes unitários.
@@ -153,7 +154,7 @@ Os arquivos processados estarão disponíveis na pasta etl/output.
 Para executar os testes unitários:
 
    ```bash
-   pytest
+   coverage run -m unittest test_main.py
    ```
 A cobertura de testes do projeto é de 90%.
 
