@@ -129,10 +129,10 @@ api-etl-pipeline/
 - `prediction.py`: Executa previsões de tendências com o modelo Prophet. (Será implementado em um MVP2)
 
 ## Arquitetura
-A arquitetura do pipeline ETL é composta pelos seguintes componentes:
+A arquitetura está estruturada de forma hierárquica, começando com a fonte de dados (Embrapa) e passando por cada etapa do processo ETL até a previsão.
 
 
-![Diagrama sem nome drawio (1)](https://github.com/user-attachments/assets/1839201c-d449-4e85-a8b1-a7bd00fe5a70)
+
 
 
 ## API de Produção 
