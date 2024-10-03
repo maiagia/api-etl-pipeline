@@ -131,40 +131,7 @@ api-etl-pipeline/
 ## Arquitetura
 A arquitetura do pipeline ETL é composta pelos seguintes componentes:
 
-                        +---------------------------------+
-                        |   APIs de Dados (Embrapa)       |
-                        |(Produção e Exportação de Vinhos)|
-                        +---------------+-----------------+
-                                        |
-                                        V
-                        +-----------------------------+
-                        |       Extração de Dados      |
-                        |    (Modulo extract.py)       |
-                        +-----------------------------+
-                                        |
-                                        V
-                        +------------------------------+
-                        |    Transformação de Dados    |
-                        |   (Modulo transform.py)      |
-                        +------------------------------+
-                                        |
-                                        V
-                        +------------------------------+
-                        |  Carga nos Arquivos de Saída |
-                        |     (Modulo load.py)         |
-                        +------------------------------+
-                                        |
-                                        V
-                        +-----------------------------+
-                        |  Arquivos de Saída (Output)  |
-                        |                              |
-                        +-----------------------------+
-                                        |
-                                        V
-                        +--------------------------------+
-                        |     Previsão de Tendências     |
-                        |  (Modulo prediction.py/Prophet)|
-                        +--------------------------------+
+![Diagrama sem nome drawio](https://github.com/user-attachments/assets/01d1fa4b-24de-406c-a66e-c2eb1a65b9e8)
 
 
 ## API de Produção 
