@@ -1,45 +1,735 @@
-produto,Total_quantidade (Litros)
-Mosto parcialmente fermentado,543510.0
-Vinho Composto,163000.0
-Destilado,2342496.0
-Base espumante moscatel,41454618.0
-Base espumante,6348269.0
-Espumante moscatel,7525544.0
-Vinho acidificado,67500.0
-Bagaceira,8672865.0
-Borra líquida,93926300.0
-Licorosos,2532326.0
-Mosto de uva com bagaço,6160330.0
-Frisante,3649759.0
-Suco de uva orgânico,2394539.0
-Vinho orgânico,40209375.0
-Suco de uva integral,708432016.0
-Tinto,8876745662.0
-Pisco,4372.0
-Vinho licoroso,1010762.0
-Néctar de uva,182822.0
-Suco de uva reconstituído,643556.0
-Jeropiga,916540.0
-Base Charmat champanha,20130540.0
-Base Champenoise champanha,7431405.0
-Rosado,1034988365.0
-Suco de uva concentrado,686207732.0
-Borra seca,871877.0
-Outros derivados,899851.0
-Branco,2904682165.0
-Compostos,3117800.0
-Vinho leve,891800.0
-Destilado alcoólico simples de bagaceira,7800.0
-Polpa de uva,33178490.0
-Bebida de uva,1107163.0
-Licor de bagaceira,7307.0
-Mosto simples,2224379987.0
-Espumante,769160.0
-Brandy,25286.0
-Mosto concentrado,7199297.0
-Suco de uva adoçado,5008118.0
-Mistelas,6634210.0
-Espumante orgânico,3777.0
-Vinagre,762582.0
-Filtrado,156000.0
-Mosto dessulfitado,1538000.0
+produto,ANO,Total_quantidade (Litros)
+Licorosos,1970,282500.0
+Mosto simples,1970,7170736.0
+Bagaceira,1970,961290.0
+Destilado,1970,830030.0
+Borra líquida,1970,3847673.0
+Suco de uva integral,1970,1097771.0
+Rosado,1970,42981052.0
+Tinto,1970,181815609.0
+Branco,1970,16311289.0
+Mistelas,1970,1072100.0
+Tinto,1971,128399035.0
+Borra líquida,1971,3565644.0
+Compostos,1971,45000.0
+Licorosos,1971,270000.0
+Rosado,1971,32635469.0
+Mistelas,1971,818400.0
+Mosto simples,1971,7646774.0
+Branco,1971,16816209.0
+Bagaceira,1971,913200.0
+Suco de uva integral,1971,2296654.0
+Vinagre,1971,21500.0
+Bagaceira,1972,755350.0
+Rosado,1972,27966634.0
+Mistelas,1972,871200.0
+Tinto,1972,124963763.0
+Vinagre,1972,8200.0
+Mosto simples,1972,6051822.0
+Suco de uva integral,1972,3509440.0
+Licorosos,1972,254600.0
+Branco,1972,15101671.0
+Borra líquida,1972,3015037.0
+Compostos,1972,1358300.0
+Mosto simples,1973,21779327.0
+Licorosos,1973,176500.0
+Branco,1973,8173970.0
+Tinto,1973,92008644.0
+Bagaceira,1973,661270.0
+Mistelas,1973,512900.0
+Rosado,1973,28896141.0
+Borra líquida,1973,3559922.0
+Compostos,1973,1628000.0
+Borra líquida,1974,5136979.0
+Mosto simples,1974,41346735.0
+Mistelas,1974,826300.0
+Branco,1974,23066239.0
+Vinagre,1974,35300.0
+Rosado,1974,45861088.0
+Tinto,1974,156592142.0
+Licorosos,1974,135000.0
+Bagaceira,1974,424620.0
+Branco,1975,23375202.0
+Borra líquida,1975,4624839.0
+Mistelas,1975,223000.0
+Tinto,1975,159005240.0
+Licorosos,1975,24000.0
+Rosado,1975,34445357.0
+Mosto simples,1975,48185206.0
+Bagaceira,1975,576098.0
+Tinto,1976,130765324.0
+Rosado,1976,26554572.0
+Borra líquida,1976,3393173.0
+Licorosos,1976,4400.0
+Mosto simples,1976,18220527.0
+Vinagre,1976,288000.0
+Branco,1976,21746132.0
+Bagaceira,1976,705912.0
+Jeropiga,1976,107500.0
+Mistelas,1976,205500.0
+Rosado,1977,40327547.0
+Branco,1977,25363618.0
+Mistelas,1977,553200.0
+Tinto,1977,170933584.0
+Mosto simples,1977,22097156.0
+Bagaceira,1977,828000.0
+Licorosos,1977,525000.0
+Jeropiga,1977,12500.0
+Tinto,1978,177918034.0
+Mistelas,1978,242150.0
+Licorosos,1978,479971.0
+Bagaceira,1978,698200.0
+Rosado,1978,36166739.0
+Mosto simples,1978,40052456.0
+Compostos,1978,75000.0
+Jeropiga,1978,60000.0
+Branco,1978,22719829.0
+Licorosos,1979,34000.0
+Tinto,1979,169092892.0
+Bagaceira,1979,938090.0
+Mosto simples,1979,34318456.0
+Jeropiga,1979,20000.0
+Branco,1979,32873527.0
+Mistelas,1979,60300.0
+Rosado,1979,55416273.0
+Branco,1980,24690024.0
+Mosto simples,1980,37553414.0
+Tinto,1980,110956496.0
+Rosado,1980,26402328.0
+Borra líquida,1981,3767852.0
+Tinto,1981,150193138.0
+Mosto simples,1981,48762185.0
+Branco,1981,40076015.0
+Rosado,1981,45208622.0
+Tinto,1982,203337048.0
+Branco,1982,50205911.0
+Mosto simples,1982,37506770.0
+Rosado,1982,38665186.0
+Tinto,1983,101421042.0
+Rosado,1983,23101057.0
+Mosto simples,1983,27314628.0
+Branco,1983,36356257.0
+Mosto simples,1984,17331744.0
+Tinto,1984,135392630.0
+Branco,1984,49898189.0
+Rosado,1984,40678791.0
+Suco de uva integral,1985,3544706.0
+Vinho orgânico,1985,254000.0
+Brandy,1985,13000.0
+Mosto concentrado,1985,354707.0
+Vinagre,1985,104707.0
+Mosto simples,1985,10637557.0
+Branco,1985,67690150.0
+Borra líquida,1985,5095798.0
+Jeropiga,1985,234500.0
+Bagaceira,1985,299500.0
+Rosado,1985,38603829.0
+Tinto,1985,236080369.0
+Destilado,1985,342650.0
+Suco de uva concentrado,1985,3086961.0
+Bagaceira,1986,156100.0
+Branco,1986,51666328.0
+Vinho orgânico,1986,171147.0
+Jeropiga,1986,173000.0
+Destilado,1986,222230.0
+Borra líquida,1986,6357648.0
+Rosado,1986,23554713.0
+Mosto concentrado,1986,295800.0
+Tinto,1986,131049661.0
+Suco de uva integral,1986,2116507.0
+Suco de uva concentrado,1986,2197261.0
+Mistelas,1986,378400.0
+Mosto simples,1986,7031320.0
+Vinho orgânico,1987,219100.0
+Jeropiga,1987,122000.0
+Bagaceira,1987,325600.0
+Mosto simples,1987,7821040.0
+Branco,1987,62930401.0
+Rosado,1987,26076816.0
+Mistelas,1987,402600.0
+Borra líquida,1987,5142446.0
+Suco de uva concentrado,1987,3206776.0
+Mosto concentrado,1987,400500.0
+Suco de uva integral,1987,2262240.0
+Tinto,1987,108761233.0
+Destilado,1987,472576.0
+Mosto concentrado,1988,384200.0
+Suco de uva concentrado,1988,5568870.0
+Brandy,1988,5216.0
+Jeropiga,1988,61000.0
+Branco,1988,89101892.0
+Borra líquida,1988,1953488.0
+Bagaceira,1988,29000.0
+Mosto simples,1988,16544460.0
+Destilado,1988,287220.0
+Suco de uva integral,1988,2018000.0
+Filtrado,1988,88000.0
+Espumante,1988,76000.0
+Rosado,1988,39811471.0
+Licorosos,1988,3000.0
+Mistelas,1988,196000.0
+Vinho orgânico,1988,15000.0
+Tinto,1988,192438460.0
+Compostos,1988,2000.0
+Tinto,1989,153071924.0
+Vinho leve,1989,249000.0
+Rosado,1989,21915823.0
+Licorosos,1989,20000.0
+Mistelas,1989,32000.0
+Compostos,1989,1900.0
+Jeropiga,1989,42000.0
+Brandy,1989,6500.0
+Mosto simples,1989,8141100.0
+Branco,1989,79586358.0
+Bagaceira,1989,52000.0
+Suco de uva integral,1989,2824600.0
+Suco de uva concentrado,1989,4098583.0
+Destilado,1989,176800.0
+Mosto concentrado,1989,732470.0
+Filtrado,1989,39000.0
+Borra líquida,1989,2426804.0
+Vinho orgânico,1989,85000.0
+Rosado,1990,26534472.0
+Suco de uva concentrado,1990,7574692.0
+Mistelas,1990,149000.0
+Filtrado,1990,11000.0
+Suco de uva integral,1990,2848560.0
+Licorosos,1990,24300.0
+Tinto,1990,172110401.0
+Vinho leve,1990,264000.0
+Mosto simples,1990,13307690.0
+Mosto concentrado,1990,1098250.0
+Branco,1990,85592450.0
+Bagaceira,1990,55000.0
+Borra líquida,1990,1282381.0
+Mosto concentrado,1991,921400.0
+Rosado,1991,11610630.0
+Vinho orgânico,1991,137000.0
+Bagaceira,1991,15000.0
+Vinho leve,1991,192800.0
+Filtrado,1991,18000.0
+Suco de uva concentrado,1991,7715462.0
+Suco de uva integral,1991,3609000.0
+Tinto,1991,102322731.0
+Borra líquida,1991,1649130.0
+Branco,1991,58354060.0
+Mosto simples,1991,17407568.0
+Licorosos,1991,11500.0
+Vinagre,1992,45000.0
+Mosto concentrado,1992,288900.0
+Vinho leve,1992,144500.0
+Tinto,1992,132088805.0
+Filtrado,1992,11000.0
+Bagaceira,1992,10000.0
+Espumante,1992,11000.0
+Suco de uva integral,1992,4033698.0
+Borra líquida,1992,1400200.0
+Jeropiga,1992,60000.0
+Rosado,1992,19469770.0
+Licorosos,1992,7800.0
+Branco,1992,64302622.0
+Suco de uva concentrado,1992,6763926.0
+Mosto simples,1992,27491540.0
+Mosto concentrado,1993,355100.0
+Tinto,1993,137291703.0
+Branco,1993,72401973.0
+Mosto simples,1993,17218000.0
+Suco de uva concentrado,1993,8230953.0
+Rosado,1993,15115544.0
+Suco de uva integral,1993,3800800.0
+Mosto simples,1994,10972700.0
+Branco,1994,70711533.0
+Mosto concentrado,1994,335500.0
+Suco de uva integral,1994,3884000.0
+Suco de uva concentrado,1994,9459721.0
+Rosado,1994,12968893.0
+Tinto,1994,177126578.0
+Vinho orgânico,1994,4745442.0
+Mosto concentrado,1995,265000.0
+Rosado,1995,33133755.0
+Mosto simples,1995,20917600.0
+Vinho orgânico,1995,2454500.0
+Suco de uva concentrado,1995,8770183.0
+Branco,1995,49682470.0
+Tinto,1995,179098308.0
+Suco de uva integral,1995,4123776.0
+Vinho orgânico,1996,351426.0
+Rosado,1996,13558540.0
+Suco de uva concentrado,1996,6782000.0
+Branco,1996,55967514.0
+Mosto simples,1996,12111372.0
+Mosto concentrado,1996,292000.0
+Tinto,1996,128716775.0
+Suco de uva integral,1996,2407900.0
+Suco de uva concentrado,1997,10524045.0
+Rosado,1997,25119861.0
+Suco de uva integral,1997,2884969.0
+Branco,1997,75635112.0
+Tinto,1997,129049488.0
+Vinho orgânico,1997,4997317.0
+Mosto concentrado,1997,490000.0
+Mosto simples,1997,19066000.0
+Tinto,1998,110844005.0
+Mosto concentrado,1998,381000.0
+Suco de uva concentrado,1998,10000000.0
+Vinho orgânico,1998,3265781.0
+Rosado,1998,17345229.0
+Branco,1998,56524339.0
+Mosto simples,1998,11046570.0
+Suco de uva integral,1998,3904186.0
+Suco de uva integral,1999,4132303.0
+Destilado,1999,7350.0
+Espumante,1999,6900.0
+Mosto simples,1999,14359734.0
+Licorosos,1999,44740.0
+Tinto,1999,182790071.0
+Branco,1999,73202990.0
+Rosado,1999,16358212.0
+Mosto concentrado,1999,411354.0
+Suco de uva concentrado,1999,11400000.0
+Vinho orgânico,1999,8592228.0
+Espumante,2000,71410.0
+Destilado,2000,1960.0
+Tinto,2000,226788283.0
+Mosto simples,2000,16192018.0
+Suco de uva integral,2000,3546779.0
+Suco de uva concentrado,2000,14176000.0
+Bagaceira,2000,12700.0
+Mistelas,2000,33000.0
+Licorosos,2000,21000.0
+Borra líquida,2000,9626928.0
+Rosado,2000,20589630.0
+Branco,2000,81857402.0
+Branco,2001,64716430.0
+Suco de uva concentrado,2001,12790752.0
+Borra líquida,2001,8216162.0
+Tinto,2001,188855120.0
+Mistelas,2001,15000.0
+Bagaceira,2001,10350.0
+Rosado,2001,9520185.0
+Espumante moscatel,2001,276099.0
+Licorosos,2001,4000.0
+Mosto simples,2001,6977231.0
+Suco de uva integral,2001,5196430.0
+Rosado,2002,8492254.0
+Suco de uva concentrado,2002,14722802.0
+Borra líquida,2002,8541861.0
+Branco,2002,53241346.0
+Tinto,2002,229511366.0
+Mosto simples,2002,12875000.0
+Vinho orgânico,2002,6705487.0
+Suco de uva integral,2002,5505889.0
+Mistelas,2003,5500.0
+Borra líquida,2003,3126172.0
+Tinto,2003,170871263.0
+Suco de uva concentrado,2003,11048364.0
+Espumante moscatel,2003,147600.0
+Vinho leve,2003,11000.0
+Vinho orgânico,2003,7584380.0
+Branco,2003,54920120.0
+Mosto simples,2003,13172480.0
+Rosado,2003,6305798.0
+Licorosos,2003,34420.0
+Suco de uva integral,2003,1372381.0
+Bagaceira,2003,26800.0
+Rosado,2004,8106671.0
+Borra líquida,2004,1044490.0
+Mosto simples,2004,26067525.0
+Bagaceira,2004,66082.0
+Suco de uva concentrado,2004,17855732.0
+Vinho licoroso,2004,77800.0
+Espumante,2004,3999.0
+Base espumante moscatel,2004,98900.0
+Vinho leve,2004,6000.0
+Branco,2004,71523614.0
+Espumante moscatel,2004,204000.0
+Destilado,2004,1000.0
+Polpa de uva,2004,890562.0
+Mistelas,2004,11500.0
+Suco de uva integral,2004,6222380.0
+Tinto,2004,277234607.0
+Suco de uva integral,2005,7103175.0
+Espumante,2005,1920.0
+Borra líquida,2005,526016.0
+Suco de uva concentrado,2005,19513244.0
+Espumante moscatel,2005,514480.0
+Rosado,2005,6201350.0
+Mosto simples,2005,22429791.0
+Bagaceira,2005,32050.0
+Polpa de uva,2005,1350672.0
+Vinho licoroso,2005,125700.0
+Suco de uva adoçado,2005,1344177.0
+Mistelas,2005,9960.0
+Branco,2005,59224509.0
+Base espumante,2005,239000.0
+Mosto concentrado,2005,83116.0
+Base espumante moscatel,2005,212400.0
+Tinto,2005,206108471.0
+Vinho leve,2005,16500.0
+Bagaceira,2006,24250.0
+Espumante moscatel,2006,320514.0
+Branco,2006,44988359.0
+Tinto,2006,168420663.0
+Espumante,2006,26600.0
+Mosto simples,2006,25903812.0
+Suco de uva integral,2006,13946491.0
+Borra líquida,2006,57333.0
+Vinho orgânico,2006,22933.0
+Polpa de uva,2006,1006000.0
+Suco de uva concentrado,2006,17414605.0
+Rosado,2006,3860842.0
+Base espumante moscatel,2006,362589.0
+Vinho licoroso,2006,28500.0
+Bagaceira,2007,48500.0
+Espumante moscatel,2007,589332.0
+Base espumante moscatel,2007,111200.0
+Suco de uva adoçado,2007,709098.0
+Vinho orgânico,2007,307410.0
+Rosado,2007,5805121.0
+Base espumante,2007,78250.0
+Mosto concentrado,2007,110000.0
+Mosto simples,2007,37558010.0
+Tinto,2007,252942291.0
+Borra líquida,2007,2095873.0
+Mistelas,2007,1900.0
+Polpa de uva,2007,1083202.0
+Suco de uva integral,2007,10147037.0
+Suco de uva concentrado,2007,19280709.0
+Branco,2007,59716980.0
+Vinho licoroso,2007,27926.0
+Borra líquida,2008,1679775.0
+Mistelas,2008,2000.0
+Tinto,2008,268640960.0
+Suco de uva concentrado,2008,23014646.0
+Vinho orgânico,2008,15000.0
+Vinho licoroso,2008,65650.0
+Suco de uva integral,2008,11817941.0
+Rosado,2008,4445728.0
+Bagaceira,2008,8500.0
+Base espumante moscatel,2008,474721.0
+Bebida de uva,2008,1082700.0
+Mosto simples,2008,53683415.0
+Espumante moscatel,2008,1113462.0
+Espumante,2008,88690.0
+Polpa de uva,2008,1188260.0
+Suco de uva adoçado,2008,815407.0
+Base espumante,2008,220120.0
+Branco,2008,61754624.0
+Suco de uva adoçado,2009,674638.0
+Suco de uva concentrado,2009,23006457.0
+Mistelas,2009,3500.0
+Bagaceira,2009,6500.0
+Base espumante moscatel,2009,442150.0
+Polpa de uva,2009,1352417.0
+Base espumante,2009,335850.0
+Suco de uva integral,2009,16034003.0
+Bebida de uva,2009,420.0
+Tinto,2009,182352497.0
+Mosto simples,2009,53418555.0
+Branco,2009,60578253.0
+Espumante moscatel,2009,1190500.0
+Rosado,2009,2388024.0
+Licorosos,2009,38000.0
+Borra seca,2010,149981.0
+Vinho licoroso,2010,15000.0
+Branco,2010,48421110.0
+Vinagre,2010,5817.0
+Base Champenoise champanha,2010,92082.0
+Bebida de uva,2010,7900.0
+Suco de uva integral,2010,26887259.0
+Polpa de uva,2010,1951606.0
+Jeropiga,2010,69000.0
+Espumante moscatel,2010,703393.0
+Suco de uva concentrado,2010,23238685.0
+Base espumante moscatel,2010,1144508.0
+Frisante,2010,831000.0
+Rosado,2010,2961089.0
+Borra líquida,2010,64304.0
+Base Charmat champanha,2010,254000.0
+Espumante,2010,10125.0
+Mosto simples,2010,45912040.0
+Tinto,2010,168691494.0
+Base Champenoise champanha,2011,74746.0
+Espumante moscatel,2011,219100.0
+Suco de uva adoçado,2011,312200.0
+Suco de uva concentrado,2011,29564324.0
+Suco de uva integral,2011,39487800.0
+Mosto de uva com bagaço,2011,1037600.0
+Base Charmat champanha,2011,865858.0
+Polpa de uva,2011,2480120.0
+Branco,2011,68746930.0
+Espumante,2011,26361.0
+Vinho orgânico,2011,5600.0
+Base espumante moscatel,2011,2749540.0
+Frisante,2011,1003800.0
+Mosto simples,2011,77285998.0
+Rosado,2011,2474192.0
+Tinto,2011,234218098.0
+Base espumante moscatel,2012,2798908.0
+Suco de uva adoçado,2012,533048.0
+Tinto,2012,199903021.0
+Mistelas,2012,200.0
+Base Charmat champanha,2012,479625.0
+Espumante,2012,17200.0
+Compostos,2012,7600.0
+Base Champenoise champanha,2012,369278.0
+Licorosos,2012,26775.0
+Suco de uva integral,2012,31908829.0
+Suco de uva concentrado,2012,37624855.0
+Frisante,2012,778500.0
+Espumante moscatel,2012,139775.0
+Branco,2012,55585487.0
+Mosto simples,2012,93341575.0
+Polpa de uva,2012,2797665.0
+Rosado,2012,2489259.0
+Tinto,2013,186268255.0
+Borra seca,2013,78397.0
+Suco de uva concentrado,2013,31206394.0
+Vinho licoroso,2013,100.0
+Frisante,2013,1009000.0
+Néctar de uva,2013,10000.0
+Bebida de uva,2013,4260.0
+Branco,2013,53972752.0
+Base Champenoise champanha,2013,359617.0
+Base Charmat champanha,2013,624728.0
+Espumante moscatel,2013,159781.0
+Suco de uva integral,2013,33673396.0
+Rosado,2013,2445745.0
+Mistelas,2013,2500.0
+Polpa de uva,2013,1742152.0
+Borra líquida,2013,63111.0
+Mosto simples,2013,58517506.0
+Base espumante moscatel,2013,1470700.0
+Espumante,2013,30275.0
+Tinto,2014,174985359.0
+Vinho Composto,2014,3000.0
+Bebida de uva,2014,3860.0
+Espumante moscatel,2014,100000.0
+Néctar de uva,2014,1140.0
+Branco,2014,57492873.0
+Base Champenoise champanha,2014,234725.0
+Suco de uva integral,2014,43331223.0
+Borra seca,2014,142850.0
+Vinagre,2014,53776.0
+Base Charmat champanha,2014,376968.0
+Suco de uva concentrado,2014,33392314.0
+Rosado,2014,2159205.0
+Polpa de uva,2014,2484000.0
+Mistelas,2014,1000.0
+Vinho licoroso,2014,36000.0
+Espumante,2014,2700.0
+Base espumante moscatel,2014,1808044.0
+Borra líquida,2014,50954.0
+Mosto simples,2014,57582195.0
+Frisante,2014,26069.0
+Borra líquida,2015,48833.0
+Néctar de uva,2015,1000.0
+Mosto simples,2015,100911592.0
+Suco de uva concentrado,2015,35661313.0
+Base Champenoise champanha,2015,605001.0
+Tinto,2015,186557368.0
+Bebida de uva,2015,922.0
+Borra seca,2015,120230.0
+Rosado,2015,1780958.0
+Branco,2015,59119216.0
+Suco de uva integral,2015,52233155.0
+Espumante moscatel,2015,110100.0
+Base espumante moscatel,2015,1607727.0
+Vinho licoroso,2015,56000.0
+Vinagre,2015,25800.0
+Espumante,2015,23750.0
+Bagaceira,2015,1350.0
+Base Charmat champanha,2015,1466259.0
+Polpa de uva,2015,2371140.0
+Borra seca,2016,82367.0
+Suco de uva integral,2016,31117869.0
+Espumante,2016,1500.0
+Vinagre,2016,5000.0
+Rosado,2016,903438.0
+Base espumante moscatel,2016,1325700.0
+Tinto,2016,84054038.0
+Bebida de uva,2016,3474.0
+Suco de uva concentrado,2016,11092520.0
+Mosto simples,2016,49770993.0
+Espumante moscatel,2016,100000.0
+Polpa de uva,2016,1620430.0
+Bagaceira,2016,1000.0
+Base Charmat champanha,2016,250280.0
+Vinho licoroso,2016,24200.0
+Base Champenoise champanha,2016,740395.0
+Branco,2016,19432165.0
+Borra líquida,2016,24975.0
+Rosado,2017,37288503.0
+Vinagre,2017,25319.0
+Suco de uva reconstituído,2017,59300.0
+Branco,2017,239456385.0
+Base espumante moscatel,2017,1965629.0
+Espumante,2017,11280.0
+Base Charmat champanha,2017,893364.0
+Suco de uva concentrado,2017,30059271.0
+Tinto,2017,22808169.0
+Mosto simples,2017,101010116.0
+Suco de uva adoçado,2017,177774.0
+Vinho licoroso,2017,110820.0
+Polpa de uva,2017,2507125.0
+Bagaceira,2017,900.0
+Licorosos,2017,110820.0
+Suco de uva integral,2017,46865626.0
+Mosto de uva com bagaço,2017,772110.0
+Espumante moscatel,2017,152375.0
+Mistelas,2017,1500.0
+Base Champenoise champanha,2017,1552403.0
+Néctar de uva,2017,3000.0
+Vinho leve,2018,8000.0
+Espumante,2018,68500.0
+Espumante moscatel,2018,326200.0
+Mistelas,2018,2000.0
+Suco de uva concentrado,2018,31099910.0
+Tinto,2018,207388396.0
+Polpa de uva,2018,2112683.0
+Rosado,2018,2167233.0
+Vinho licoroso,2018,124303.0
+Vinagre,2018,25367.0
+Borra líquida,2018,255100.0
+Borra seca,2018,70480.0
+Base Charmat champanha,2018,1746540.0
+Base Champenoise champanha,2018,228518.0
+Destilado,2018,680.0
+Base espumante moscatel,2018,1320650.0
+Branco,2018,47527227.0
+Mosto simples,2018,88910980.0
+Bagaceira,2018,2100.0
+Suco de uva integral,2018,34367996.0
+Suco de uva adoçado,2019,120320.0
+Branco,2019,40225883.0
+Mosto de uva com bagaço,2019,645816.0
+Mosto dessulfitado,2019,1000.0
+Base Champenoise champanha,2019,274903.0
+Polpa de uva,2019,1480269.0
+Vinagre,2019,76096.0
+Pisco,2019,3372.0
+Borra líquida,2019,901431.0
+Rosado,2019,3584784.0
+Néctar de uva,2019,32519.0
+Mosto simples,2019,135614344.0
+Suco de uva integral,2019,50239767.0
+Vinho licoroso,2019,99485.0
+Licor de bagaceira,2019,1507.0
+Espumante,2019,52176.0
+Base Charmat champanha,2019,1188095.0
+Tinto,2019,138434492.0
+Suco de uva concentrado,2019,26861009.0
+Mistelas,2019,3000.0
+Bagaceira,2019,10495.0
+Suco de uva reconstituído,2019,584256.0
+Espumante moscatel,2019,515800.0
+Borra seca,2019,25996.0
+Base espumante moscatel,2019,1962443.0
+Vinho orgânico,2020,18700.0
+Suco de uva concentrado,2020,27963865.0
+Borra líquida,2020,509378.0
+Suco de uva orgânico,2020,471610.0
+Polpa de uva,2020,1803472.0
+Suco de uva adoçado,2020,107289.0
+Base Champenoise champanha,2020,200777.0
+Base Charmat champanha,2020,2487939.0
+Rosado,2020,2292177.0
+Néctar de uva,2020,46000.0
+Mosto de uva com bagaço,2020,3078256.0
+Suco de uva integral,2020,40718523.0
+Base espumante moscatel,2020,3006705.0
+Vinho licoroso,2020,48678.0
+Branco,2020,35056649.0
+Pisco,2020,1000.0
+Espumante moscatel,2020,689139.0
+Vinagre,2020,10000.0
+Borra seca,2020,167587.0
+Destilado alcoólico simples de bagaceira,2020,500.0
+Espumante,2020,32399.0
+Licor de bagaceira,2020,5800.0
+Jeropiga,2020,2000.0
+Vinho acidificado,2020,65000.0
+Tinto,2020,119368274.0
+Mosto dessulfitado,2020,5000.0
+Mosto simples,2020,80355474.0
+Suco de uva integral,2021,68038479.0
+Frisante,2021,1390.0
+Mosto dessulfitado,2021,1532000.0
+Polpa de uva,2021,1180578.0
+Bebida de uva,2021,2000.0
+Tinto,2021,166509245.0
+Espumante moscatel,2021,11950.0
+Néctar de uva,2021,18187.0
+Jeropiga,2021,3540.0
+Bagaceira,2021,12060.0
+Outros derivados,2021,322.0
+Mosto simples,2021,153579926.0
+Borra seca,2021,16789.0
+Destilado alcoólico simples de bagaceira,2021,3000.0
+Espumante orgânico,2021,2412.0
+Branco,2021,47300798.0
+Mosto parcialmente fermentado,2021,543510.0
+Base espumante moscatel,2021,5549471.0
+Borra líquida,2021,116450.0
+Rosado,2021,3564950.0
+Mistelas,2021,2500.0
+Suco de uva concentrado,2021,32131218.0
+Suco de uva orgânico,2021,722117.0
+Suco de uva adoçado,2021,40450.0
+Base espumante,2021,5475049.0
+Vinho licoroso,2021,30000.0
+Espumante,2021,70091.0
+Brandy,2021,120.0
+Vinagre,2021,7500.0
+Vinho Composto,2021,160000.0
+Mosto de uva com bagaço,2021,618764.0
+Vinho orgânico,2021,93884.0
+Outros derivados,2022,247228.0
+Tinto,2022,187262132.0
+Espumante moscatel,2022,27200.0
+Mosto simples,2022,126048241.0
+Suco de uva orgânico,2022,589094.0
+Base Charmat champanha,2022,4078766.0
+Destilado alcoólico simples de bagaceira,2022,4300.0
+Vinho orgânico,2022,88890.0
+Vinagre,2022,16200.0
+Rosado,2022,4186233.0
+Polpa de uva,2022,387886.0
+Suco de uva adoçado,2022,79130.0
+Bagaceira,2022,4998.0
+Branco,2022,51095043.0
+Base Champenoise champanha,2022,1146717.0
+Jeropiga,2022,5000.0
+Base espumante moscatel,2022,6308043.0
+Espumante,2022,70759.0
+Vinho licoroso,2022,67000.0
+Suco de uva integral,2022,35248305.0
+Suco de uva concentrado,2022,29892550.0
+Bebida de uva,2023,1627.0
+Vinagre,2023,9000.0
+Suco de uva orgânico,2023,611718.0
+Rosado,2023,4490582.0
+Base espumante moscatel,2023,6734590.0
+Néctar de uva,2023,70976.0
+Espumante orgânico,2023,1365.0
+Borra líquida,2023,758140.0
+Base Champenoise champanha,2023,1552243.0
+Jeropiga,2023,4500.0
+Tinto,2023,162936667.0
+Mosto de uva com bagaço,2023,7784.0
+Branco,2023,48603736.0
+Mistelas,2023,600.0
+Suco de uva concentrado,2023,28216760.0
+Vinho acidificado,2023,2500.0
+Outros derivados,2023,652301.0
+Suco de uva integral,2023,38122173.0
+Polpa de uva,2023,1388251.0
+Espumante moscatel,2023,14744.0
+Espumante,2023,65525.0
+Base Charmat champanha,2023,5418118.0
+Vinho licoroso,2023,73600.0
+Mosto simples,2023,157848983.0
+Suco de uva adoçado,2023,94587.0
+Borra seca,2023,17200.0
+Vinho orgânico,2023,94150.0
+Brandy,2023,450.0

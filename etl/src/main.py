@@ -37,13 +37,16 @@ def transform_producao(df: DataFrame) -> DataFrame:
         return: DataFrame
     """
     try:
-        df_producao = df.select("PRODUTO", "QUANTIDADE_L").distinct() \
+        df_producao = df.select("PRODUTO", "QUANTIDADE_L", "ANO").distinct() \
             .withColumnRenamed("PRODUTO", "produto") \
             .withColumnRenamed("QUANTIDADE_L", "quantidade (Litros)") \
-            .groupBy("produto") \
+            .withColumnRenamed("ANO", "Ano") \
+            .groupBy("produto", "ANO") \
             .agg(
-            F.sum("quantidade (Litros)").alias("Total_quantidade (Litros)")
-        )
+                F.sum("quantidade (Litros)").alias("Total_quantidade (Litros)")
+            ) \
+            .filter((F.col("Total_quantidade (Litros)") > 0))\
+            .orderBy("ANO")
         return df_producao
     except Exception as e:
         logging.error(f"Erro ao transformar DataFrame: {e}")
@@ -56,13 +59,16 @@ def transform_exportacao(df: DataFrame) -> DataFrame:
         return: DataFrame
     """
     try:
-        df_exportacao = df.select("PAISES", "QUANTIDADE_KG", "VALOR_US").distinct() \
-            .groupBy("PAISES") \
+        df_exportacao = df.select("PAISES", "QUANTIDADE_KG", "VALOR_US", "ANO").distinct() \
+            .groupBy("PAISES", "ANO") \
             .agg(
-            F.sum("QUANTIDADE_KG").alias("Quantidade (kg)"),
-            F.sum("VALOR_US").alias("Valor (US$)")
-        ) \
-            .withColumnRenamed("PAISES", "Pais")
+                F.sum("QUANTIDADE_KG").alias("Quantidade (kg)"),
+                F.sum("VALOR_US").alias("Valor (US$)")
+            ) \
+            .withColumnRenamed("PAISES", "Pais") \
+            .withColumnRenamed("ANO", "Ano") \
+            .orderBy("ANO") \
+            .filter((F.col("Quantidade (kg)") > 0) & (F.col("Valor (US$)") > 0))
         return df_exportacao
     except Exception as e:
         logging.error(f"Erro ao transformar DataFrame: {e}")

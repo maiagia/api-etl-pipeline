@@ -25,20 +25,6 @@ class TestETL(unittest.TestCase):
         spark = spark_context_create()
         self.assertIsInstance(spark, SparkSession)
 
-    # def test_read_source(self):
-    #     schema_producao = StructType([
-    #         StructField("PRODUTO", StringType(), True),
-    #         StructField("QUANTIDADE_L", LongType(), True)
-    #     ])
-    #     schema_exportacao = StructType([
-    #         StructField("PAISES", StringType(), True),
-    #         StructField("QUANTIDADE_KG", LongType(), True),
-    #         StructField("VALOR_US", DoubleType(), True)
-    #     ])
-    #     df_producao, df_exportacao = read_source(self.spark)
-    #     self.assertEqual(df_producao.schema, schema_producao)
-    #     self.assertEqual(df_exportacao.schema, schema_exportacao)
-
     def test_transform_producao(self):
         schema = StructType([
             StructField("PRODUTO", StringType(), True),
