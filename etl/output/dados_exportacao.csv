@@ -1,4 +1,4 @@
-Pais,Ano,Quantidade (kg),Valor (US$)
+pais,ano,quantidade_kg,valor
 Antilhas Holandesas,1970,280.0,207.0
 Estados Unidos,1970,11200.0,4200.0
 Guiana,1970,114.0,36.0
