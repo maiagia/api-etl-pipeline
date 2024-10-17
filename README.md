@@ -24,9 +24,6 @@ Este projeto realiza um pipeline completo de ETL (Extração, Transformação e 
 **Fonte dos Dados**: Site VitiBrasil
 O site da Embrapa Uva e Vinho [VitiBrasil](http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01) é a fonte principal de dados. Ele fornece informações detalhadas sobre a produção de uvas, exportações, comercialização e processamento de uvas por ano. O projeto acessa diretamente tabelas HTML desse portal para transformar os dados em formatos utilizáveis.
 
-## Objetivos do Projeto
-O objetivo principal é oferecer uma solução robusta e automatizada para coleta, transformação e previsão de dados, permitindo que as informações de produção e comercialização sejam facilmente acessadas, processadas e analisadas. A automação do pipeline ETL elimina o trabalho manual de coleta, processamento e visualização dos dados.
-
 *Benefícios*:
 1.   Automatização Completa: O processo de ETL é completamente automatizado, o que facilita a coleta e o processamento dos dados brutos provenientes das APIs do VitiBrasil.
 2.   Transformação dos Dados: Dados extraídos são normalizados, transformados e processados, garantindo alta qualidade e padronização.
