@@ -9,7 +9,21 @@ Rafael Tafelli dos Santos
 ## Sumário
 
 - [Descrição do Projeto](#descrição-do-projeto)
+- [Fonte dos Dados](#fonte-dos-dados)
 - [Estrutura do Projeto](#estrutura-do-projeto)
+- [Descrição das Pastas](#descrição-das-pastas)
+  - [API](#1-api)
+  - [ETL](#2-etl)
+  - [Model](#3-model)
+- [API: Coleta de Dados de Produção e Exportação](#api-coleta-de-dados-de-produção-e-exportação)
+  - [Produção de Uvas](#1-produção-de-uvas)
+  - [Exportação de Uvas](#2-exportação-de-uvas)
+- [Como Executar o Projeto](#como-executar-o-projeto)
+  - [Pré-requisitos](#pré-requisitos)
+  - [Execução do Pipeline ETL](#execução-do-pipeline-etl)
+  - [Executar o Modelo de Previsão](#executar-o-modelo-de-previsão)
+- [Arquitetura do Projeto](#arquitetura-do-projeto)
+- [Benefícios da Arquitetura](#benefícios-da-arquitetura)
 
 
 ## Descrição do Projeto
@@ -99,13 +113,14 @@ As APIs fazem requisições ao site **VitiBrasil**, da **Embrapa**, para extrair
   - **Quantidade (Kg)**
   - **Valor (US$)**
 
-##  Como Executar o Projeto
-- **Pré-requisitos**
-  -  Python 3.x
-  -  Instalar as dependências listadas em `requirements.txt`:
+## Como Executar o Projeto
+
+### Pré-requisitos
+- **Python 3.x**: Certifique-se de ter a versão mais recente do Python instalada.
+- **Instalação das dependências**: Instale as dependências listadas em `requirements.txt`:
 
 ```bash
-  pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Execução do Pipeline ETL
