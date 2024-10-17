@@ -6,22 +6,6 @@ Lucas Paim de Paula,<br/>
 Rafael Tafelli dos Santos
 
 
-# Previsão de Produção e Exportação de Vitivinicultura
-
-Este projeto implementa um pipeline ETL (Extract, Transform, Load) para coletar e transformar dados relacionados à vitivinicultura, disponibilizados pela *Embrapa* (Empresa Brasileira de Pesquisa Agropecuária). O objetivo é analisar e prever tendências de produção e exportação de produtos derivados da vitivinicultura, como vinhos e sucos, ajudando empresas a otimizar suas operações no setor.
-
-## Visão de Negócio
-
-A análise e previsão da produção de vinhos, sucos e outros produtos derivados da uva são fundamentais para vinícolas e exportadores do setor. Os dados disponíveis no site da *Embrapa* proporcionam informações valiosas sobre a produção e exportação do Brasil, um dos principais países produtores de vinho. Com este pipeline, empresas podem:
-
-- Monitorar o desempenho de sua produção ao longo do tempo.
-- Planejar melhor suas exportações com base nas previsões de produção e demanda global.
-- Aumentar a eficiência logística e comercial, otimizando o volume de exportações.
-
-## Valor Gerado
-
-Este pipeline ajuda a transformar dados de produção e exportação em insights práticos, permitindo às empresas tomar decisões estratégicas baseadas em análises preditivas. Isso inclui identificar tendências sazonais, ajustar a capacidade de produção, e otimizar a venda de produtos para mercados com maior retorno.
-
 ## Sumário
 
 - [Descrição do Projeto](#descrição-do-projeto)
@@ -37,28 +21,16 @@ Este pipeline ajuda a transformar dados de produção e exportação em insights
 
 O pipeline ETL coleta dados de vitivinicultura disponíveis no [site da Embrapa](http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01). Esses dados incluem informações sobre a produção agrícola de vinhos e sucos, bem como sobre as exportações para diversos países. O pipeline transforma esses dados em arquivos de saída processados, permitindo a previsão de tendências futuras com o uso do modelo *Prophet*.
 
-**Variáveis de Previsão**:
+## Documentação da API MLET3
 
-As variáveis utilizadas para as previsões de produção e exportação incluem:
+Esta documentação descreve uma API desenvolvida para extrair, processar e disponibilizar dados relacionados à produção, processamento e comercialização de produtos vitivinícolas no Brasil. Os dados são obtidos do site oficial da Embrapa Uva e Vinho [VitiBrasil](http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01) e disponibilizados através de endpoints RESTful.
 
-1. Produção:
-   - **Produto**: Tipo de produto (ex: Vinho de mesa, Vinho fino, Suco, etc.).
-   - **Quantidade (L)**: Quantidade de produção em litros para cada tipo de produto.
+A API utiliza bibliotecas como Flask, Pandas, BeautifulSoup e Requests para manipulação dos dados e criação dos serviços web.
 
-2. Exportação:
-   - **Países**: Países para onde os produtos foram exportados.
-   - **Quantidade (Kg)**: Quantidade de exportação em quilogramas.
-   - **Valor (US$)**: Valor em dólares gerado pela exportação.
 
-Essas variáveis são usadas para prever tendências de produção e exportação ao longo do tempo, ajudando a empresa a ajustar suas estratégias de mercado e operação.
 
-## Pré-requisitos
 
-Certifique-se de ter as seguintes ferramentas instaladas:
 
-- [Python 3.8+](https://www.python.org/)
-- [pip](https://pip.pypa.io/en/stable/installing/)
-- Um ambiente virtual separado para gerenciar as dependências do projeto.
 
 ### Bibliotecas Necessárias
 
