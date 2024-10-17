@@ -23,23 +23,6 @@ Este projeto realiza um pipeline completo de ETL (Extração, Transformação e 
 
 **Fonte dos Dados**: Site VitiBrasil
 O site da Embrapa Uva e Vinho [VitiBrasil](http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01) é a fonte principal de dados. Ele fornece informações detalhadas sobre a produção de uvas, exportações, comercialização e processamento de uvas por ano. O projeto acessa diretamente tabelas HTML desse portal para transformar os dados em formatos utilizáveis.
-
-*Benefícios*:
-1.   Automatização Completa: O processo de ETL é completamente automatizado, o que facilita a coleta e o processamento dos dados brutos provenientes das APIs do VitiBrasil.
-2.   Transformação dos Dados: Dados extraídos são normalizados, transformados e processados, garantindo alta qualidade e padronização.
-3.   Modelagem Preditiva: O modelo Prophet gera previsões de tendências futuras de produção e comercialização, oferecendo insights para planejamento estratégico.
-4.   Escalabilidade: O pipeline pode ser escalado para lidar com volumes maiores de dados e pode ser estendido para incluir novos endpoints ou fontes de dados.
-
-## Arquitetura 
-A arquitetura do projeto foi projetada para facilitar a escalabilidade, a modularidade e a integração de novas fontes de dados e modelos preditivos.
-
-+----------------+          +---------------+         +---------------+          +-----------+
-|                |          |               |         |               |          |           |
-| API Vitibrasil | -------> | ETL Pipeline  | ----->  |  Data Output  | ----->   |  Prophet  |
-|                |          | (Extração,    |         | (CSV, JSON)   |          | (Modelo)  |
-|                |          | Transformação |         |               |          |           |
-+----------------+          |  e Carga)     |         +---------------+          +-----------+
-                             +--------------+                                   
                        
 
 ## Estrutura do Projeto
@@ -75,37 +58,34 @@ api-etl-pipeline/
 
 
 ```
-## APIs Disponíveis
-As APIs deste projeto acessam os dados vitivinícolas do VitiBrasil, site da Embrapa (VitiBrasil), que fornece informações detalhadas sobre a produção de uvas, processamento e comercialização. As APIs são responsáveis por extrair os dados diretamente de tabelas HTML via scraping.
 
-*Endpoints*
+## API: Coleta de Dados de Produção e Exportação
+Fonte: VitiBrasil (Embrapa)<br/> 
+As APIs fazem requisições ao site VitiBrasil, da Embrapa, para extrair dados sobre a produção e exportação de uvas no Brasil.
 
-1. Produção de Uvas<br/>
-**Endpoint**: /producao/<AnoMin>/<AnoMax><br/>
-**Descrição**: Retorna dados sobre a produção de uvas no Brasil em litros e valor total por categoria de produto (ex: vinho, suco) e produto específico.<br/>
-**Parâmetros**:<br/>
-AnoMin: Ano inicial.<br/>
-AnoMax: Ano final.<br/>
-**Retorno**: JSON contendo as colunas: Categoria, Produto, Quantidade (L), Valor Total (R$)
+## Endpoints Disponíveis
+1. Produção de Uvas<br/> 
+Endpoint: /producao/<AnoMin>/<AnoMax><br/> 
+Descrição: Extrai dados sobre a produção de uvas em litros e o valor total, categorizados por produto (vinho, suco, etc.).<br/> 
+Parâmetros:<br/> 
+AnoMin: Ano inicial.<br/> 
+AnoMax: Ano final.<br/> 
+Retorno: Dados em JSON com categorias como:<br/> 
+Produto<br/> 
+Quantidade (L)<br/> 
+Valor Total (R$)<br/>
 
-2. Processamento de Uvas<br/>
-**Endpoint**: /processamento/<Opcao>/<AnoMin>/<AnoMax><br/>
-**Descrição**: Extrai dados de processamento de uvas, como uvas viníferas e híbridas, em kg.<br/>
-**Opções de Processamento**:<br/>
-Viníferas: subopt_01<br/>
-Híbridas Americanas: subopt_02<br/>
-Uvas de Mesa: subopt_03<br/>
-Sem Classificação: subopt_04<br/>
-**Retorno**: JSON contendo a quantidade processada (em kg) por categoria de produto.
-
-3. Comercialização de Produtos<br/>
-**Endpoint**: /comercializacao/<AnoMin>/<AnoMax><br/>
-**Descrição**: Retorna dados de comercialização de produtos vitivinícolas, incluindo valor total e quantidade em litros.<br/>
-**Parâmetros**:<br/>
-AnoMin: Ano inicial.<br/>
-AnoMax: Ano final.<br/>
-**Retorno**: JSON com as colunas:Categoria, Produto, Quantidade (L), Valor Total (R$).<br/>
-
+3. Exportação de Uvas<br/> 
+Endpoint: /exportacao/<AnoMin>/<AnoMax><br/> 
+Descrição: Extrai dados de exportação de uvas e derivados, incluindo quantidades exportadas (em kg) e valor gerado (em USD).<br/> 
+Parâmetros:<br/> 
+AnoMin: Ano inicial.<br/> 
+AnoMax: Ano final.<br/> 
+Retorno: Dados em JSON contendo:<br/> 
+País<br/> 
+Produto<br/> 
+Quantidade (Kg)<br/> 
+Valor (US$)<br/> 
 
 
 
