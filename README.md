@@ -51,6 +51,23 @@ api-etl-pipeline/
 ├── README.md                          # Documentação do projeto
 ├── requirements.txt                   # Dependências do projeto
 ```
+## Descrição das Pastas
+
+### 1. **API**
+A pasta `api/` contém os endpoints e funções relacionadas à coleta de dados a partir do site da Embrapa VitiBrasil. Estes dados são extraídos em formato JSON e usados no pipeline de ETL.
+
+- **`api.py`**: Define os endpoints que acessam dados de produção e exportação de uvas.
+- **`constantes.py`**: URLs e parâmetros de consulta utilizados nas requisições HTTP.
+- **`utilidades.py`**: Funções para manipulação de HTML, normalização de texto e extração de tabelas de dados via **BeautifulSoup**.
+
+### 2. **ETL**
+A pasta `etl/` contém as funções responsáveis pelo pipeline de Extração, Transformação e Carga dos dados.
+
+- **`data/`**: Armazena os dados brutos extraídos das APIs (JSON).
+- **`output/`**: Armazena os dados processados e transformados, prontos para análises.
+- **`notebook/main.ipynb`**: Notebook utilizado para testes e desenvolvimento do pipeline ETL.
+- **`src/main.py`**: Arquivo principal que orquestra o pipeline ETL completo.
+- **`tests/`**: Contém os arquivos de testes unitários para garantir que o pipeline e as APIs funcionem corretamente.
 
 ## API: Coleta de Dados de Produção e Exportação
 
