@@ -82,7 +82,7 @@ As APIs fazem requisições ao site **VitiBrasil**, da **Embrapa**, para extrair
   - **Quantidade (Kg)**
   - **Valor (US$)**
 
-##Como Executar o Projeto
+##  Como Executar o Projeto
 - **Pré-requisitos**
   -  Python 3.x
   -  Instalar as dependências listadas em `requirements.txt`:
@@ -91,8 +91,32 @@ As APIs fazem requisições ao site **VitiBrasil**, da **Embrapa**, para extrair
   pip install -r requirements.txt
 ```
 
+### Execução do Pipeline ETL
+1.  Executar o pipeline:
+```bash
+  python etl/src/main.py
+```
+2. Explorar os dados (opcional): Utilize o notebook etl/notebook/main.ipynb para explorar os dados e realizar ajustes.
 
+### Executar o Modelo de Previsão
+1.  Rodar o modelo Prophet:
+```bash
+python model/src/modelo.py
+```
+2. Resultados: As previsões geradas serão armazenadas no diretório de saída.
 
+## Arquitetura do Projeto 
+
+```plaintext
+```plaintext
++----------------+          +---------------+         +---------------+          +-----------+
+|                |          |               |         |               |          |           |
+| API Vitibrasil | -------> | ETL Pipeline  | ----->  |  Data Output  | ----->   |  Prophet  |
+|                |          | (Extração,    |         | (CSV, JSON)   |          | (Modelo)  |
+|                |          | Transformação |         |               |          |           |
++----------------+          |  e Carga)     |         +---------------+          +-----------+
+                             +--------------+                                   
+```
 
 
 
