@@ -9,13 +9,8 @@ Rafael Tafelli dos Santos
 ## Sumário
 
 - [Descrição do Projeto](#descrição-do-projeto)
-- [Pré-requisitos](#pré-requisitos)
-- [Instalação](#instalação)
-- [Configuração](#configuração)
 - [Estrutura do Projeto](#estrutura-do-projeto)
-- [Arquitetura](#arquitetura)
-- [Execução](#execução)
-- [Testes](#testes)
+
 
 ## Descrição do Projeto
 
@@ -87,7 +82,14 @@ As APIs fazem requisições ao site **VitiBrasil**, da **Embrapa**, para extrair
   - **Quantidade (Kg)**
   - **Valor (US$)**
 
+##Como Executar o Projeto
+- **Pré-requisitos**
+  -  Python 3.x
+  -  Instalar as dependências listadas em `requirements.txt`:
 
+```bash
+  pip install -r requirements.txt
+```
 
 
 
