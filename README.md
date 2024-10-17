@@ -155,3 +155,38 @@ python model/src/modelo.py
   -  Escalabilidade: O pipeline pode ser facilmente escalado para processar volumes maiores de dados.
   -  Automação Completa: Desde a coleta dos dados até a previsão, o processo é completamente automatizado.
 
+## Contribuições
+
+### Como Contribuir
+Contribuições são bem-vindas! Siga estas etapas para contribuir para o projeto:
+
+1. **Fork este repositório**: Crie uma cópia do projeto na sua conta.
+2. **Crie uma branch**: Faça suas alterações em uma nova branch.
+```bash
+   git checkout -b minha-nova-funcionalidade
+```
+3. **Faça commit das suas alterações**: Registre suas modificações.
+```bash
+   git commit -m "Adicionando nova funcionalidade"
+```
+4. **Envie suas alterações:**:
+```bash
+   git push origin minha-nova-funcionalidade
+```
+5.  Crie um Pull Request: Proponha suas alterações para serem integradas ao repositório principal.
+
+## Exemplos de Uso
+Usando a API de Produção
+Para acessar dados sobre a produção de uvas, você pode usar o seguinte endpoint:
+```bash
+   GET /producao/2020/2021
+```
+Este endpoint retornará os dados de produção entre os anos de 2020 e 2021.
+
+### Interpretando os Resultados
+Os dados retornados estarão em formato JSON, contendo informações sobre:
+
+  -  Produto: Tipo de produto (ex: vinho, suco).
+  -  Quantidade (L): Quantidade produzida em litros.
+  -  Valor Total (R$): Valor total da produção em reais.
+
