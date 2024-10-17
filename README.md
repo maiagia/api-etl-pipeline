@@ -24,9 +24,9 @@ Este projeto realiza um pipeline completo de ETL (Extração, Transformação e 
 **Fonte dos Dados**: Site VitiBrasil
 O site da Embrapa Uva e Vinho [VitiBrasil](http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01) é a fonte principal de dados. Ele fornece informações detalhadas sobre a produção de uvas, exportações, comercialização e processamento de uvas por ano. O projeto acessa diretamente tabelas HTML desse portal para transformar os dados em formatos utilizáveis.
                        
-
 ## Estrutura do Projeto
-```
+
+```bash
 api-etl-pipeline/
 ├── api/
 │   ├── __init__.py                    # Inicialização do módulo da API
@@ -42,50 +42,52 @@ api-etl-pipeline/
 │   ├── output/                        # Dados processados após as transformações
 │   │   ├── dados_exportacao.csv       # Dados de exportação processados
 │   │   └── dados_producao.csv         # Dados de produção processados
+│   ├── src/                           # Código-fonte do pipeline ETL
+│   │   └── main.py                    # Orquestração do pipeline ETL completo
+│   ├── tests/                         # Testes unitários do pipeline e APIs
+│   │   ├── .coverage                  # Relatório de cobertura dos testes
+│   │   └── test_main.py               # Testes unitários do pipeline e APIs
 ├── model/                             # Pasta com os modelos de Machine Learning
 │   ├── notebook/                      # Notebooks para análise e desenvolvimento dos modelos
 │   │   └── main.ipynb                 # Notebook para desenvolvimento do modelo Prophet
 │   ├── src/                           # Código-fonte para os modelos
 │   │   └── modelo.py                  # Implementação do modelo Prophet para previsão
-├── src/
-│   └── main.py                        # Orquestração do pipeline ETL completo
-├── tests/
-│   ├── .coverage                      # Relatório de cobertura dos testes
-│   └── test_main.py                   # Testes unitários do pipeline e APIs
 ├── .gitignore                         # Arquivos e diretórios a serem ignorados pelo Git
 ├── README.md                          # Documentação do projeto
 ├── requirements.txt                   # Dependências do projeto
-
-
 ```
 
 ## API: Coleta de Dados de Produção e Exportação
-Fonte: VitiBrasil (Embrapa)<br/> 
-As APIs fazem requisições ao site VitiBrasil, da Embrapa, para extrair dados sobre a produção e exportação de uvas no Brasil.
 
-## Endpoints Disponíveis
-1. Produção de Uvas<br/> 
-Endpoint: /producao/<AnoMin>/<AnoMax><br/> 
-Descrição: Extrai dados sobre a produção de uvas em litros e o valor total, categorizados por produto (vinho, suco, etc.).<br/> 
-Parâmetros:<br/> 
-AnoMin: Ano inicial.<br/> 
-AnoMax: Ano final.<br/> 
-Retorno: Dados em JSON com categorias como:<br/> 
-Produto<br/> 
-Quantidade (L)<br/> 
-Valor Total (R$)<br/>
+### Fonte: VitiBrasil (Embrapa)
+As APIs fazem requisições ao site **VitiBrasil**, da **Embrapa**, para extrair dados sobre a produção e exportação de uvas no Brasil.
 
-3. Exportação de Uvas<br/> 
-Endpoint: /exportacao/<AnoMin>/<AnoMax><br/> 
-Descrição: Extrai dados de exportação de uvas e derivados, incluindo quantidades exportadas (em kg) e valor gerado (em USD).<br/> 
-Parâmetros:<br/> 
-AnoMin: Ano inicial.<br/> 
-AnoMax: Ano final.<br/> 
-Retorno: Dados em JSON contendo:<br/> 
-País<br/> 
-Produto<br/> 
-Quantidade (Kg)<br/> 
-Valor (US$)<br/> 
+### Endpoints Disponíveis
+
+#### 1. **Produção de Uvas**
+- **Endpoint**: `/producao/<AnoMin>/<AnoMax>`
+- **Descrição**: Extrai dados sobre a produção de uvas em litros e o valor total, categorizados por produto (vinho, suco, etc.).
+- **Parâmetros**:
+  - **AnoMin**: Ano inicial.
+  - **AnoMax**: Ano final.
+- **Retorno**: Dados em JSON com categorias como:
+  - **Produto**
+  - **Quantidade (L)**
+  - **Valor Total (R$)**
+
+#### 2. **Exportação de Uvas**
+- **Endpoint**: `/exportacao/<AnoMin>/<AnoMax>`
+- **Descrição**: Extrai dados de exportação de uvas e derivados, incluindo quantidades exportadas (em kg) e valor gerado (em USD).
+- **Parâmetros**:
+  - **AnoMin**: Ano inicial.
+  - **AnoMax**: Ano final.
+- **Retorno**: Dados em JSON contendo:
+  - **País**
+  - **Produto**
+  - **Quantidade (Kg)**
+  - **Valor (US$)**
+
+
 
 
 
