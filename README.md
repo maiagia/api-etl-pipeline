@@ -2,8 +2,8 @@
 **Grupo 17**<br/> 
 **Membros:**<br/> 
 Kleryton de Souza Maria,<br/> 
-Maiara Giavoni,<br/> 
 Lucas Paim de Paula,<br/> 
+Maiara Giavoni,<br/> 
 Rafael Tafelli dos Santos
 
 ## Sumário
