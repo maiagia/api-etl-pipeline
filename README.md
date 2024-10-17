@@ -45,28 +45,34 @@ A arquitetura do projeto foi projetada para facilitar a escalabilidade, a modula
 ## Estrutura do Projeto
 ```
 api-etl-pipeline/
-├── api/                             # Pasta da API
-│   ├── __init__.py                  # Inicialização do módulo API
-│   ├── api.py                       # Endpoints das APIs
-│   ├── constantes.py                # Constantes usadas pelas APIs
-│   ├── utilidades.py                # Funções utilitárias da API
-├── etl/                             # Pipeline de ETL
-│   ├── data/                        # Dados brutos extraídos das APIs
-│   ├── output/                      # Dados processados
-│   ├── extract.py                   # Funções de extração
-│   ├── transform.py                 # Funções de transformação
-│   ├── load.py                      # Funções de carga
-│   ├── main.py                      # Pipeline completo de ETL
-│   └── notebook_etl.ipynb           # Análise exploratória do ETL
-├── model/                           # Pasta de modelos
-│   ├── __init__.py                  # Inicialização do módulo de modelos
-│   ├── prophet_model.py             # Modelo Prophet para previsão
-│   └── evaluation.py                # Avaliação dos modelos
-├── tests/                           # Testes unitários
-│   └── test_pipeline.py             # Testes para o pipeline e modelos
-├── config.yaml                      # Arquivo de configuração
-├── requirements.txt                 # Dependências do projeto
-└── README.md                        # Documentação do projeto
+├── api/
+│   ├── __init__.py                    # Inicialização do módulo da API
+│   ├── api.py                         # Endpoints das APIs de produção e exportação
+│   ├── constantes.py                  # URLs e parâmetros utilizados pelas APIs
+│   ├── utilidades.py                  # Funções utilitárias para scraping e normalização de dados
+├── etl/
+│   ├── data/                          # Dados brutos extraídos das APIs
+│   │   ├── exportacao.json            # Dados de exportação em formato JSON
+│   │   └── producao.json              # Dados de produção em formato JSON
+│   ├── notebook/                      # Notebooks para exploração e desenvolvimento
+│   │   └── main.ipynb                 # Notebook para execução do pipeline ETL
+│   ├── output/                        # Dados processados após as transformações
+│   │   ├── dados_exportacao.csv       # Dados de exportação processados
+│   │   └── dados_producao.csv         # Dados de produção processados
+├── model/                             # Pasta com os modelos de Machine Learning
+│   ├── notebook/                      # Notebooks para análise e desenvolvimento dos modelos
+│   │   └── main.ipynb                 # Notebook para desenvolvimento do modelo Prophet
+│   ├── src/                           # Código-fonte para os modelos
+│   │   └── modelo.py                  # Implementação do modelo Prophet para previsão
+├── src/
+│   └── main.py                        # Orquestração do pipeline ETL completo
+├── tests/
+│   ├── .coverage                      # Relatório de cobertura dos testes
+│   └── test_main.py                   # Testes unitários do pipeline e APIs
+├── .gitignore                         # Arquivos e diretórios a serem ignorados pelo Git
+├── README.md                          # Documentação do projeto
+├── requirements.txt                   # Dependências do projeto
+
 
 ```
 ## APIs Disponíveis
@@ -74,31 +80,31 @@ As APIs deste projeto acessam os dados vitivinícolas do VitiBrasil, site da Emb
 
 *Endpoints*
 
-1. Produção de Uvas
-**Endpoint**: /producao/<AnoMin>/<AnoMax>
-**Descrição**: Retorna dados sobre a produção de uvas no Brasil em litros e valor total por categoria de produto (ex: vinho, suco) e produto específico.
-**Parâmetros**:
-AnoMin: Ano inicial.
-AnoMax: Ano final.
+1. Produção de Uvas<br/>
+**Endpoint**: /producao/<AnoMin>/<AnoMax><br/>
+**Descrição**: Retorna dados sobre a produção de uvas no Brasil em litros e valor total por categoria de produto (ex: vinho, suco) e produto específico.<br/>
+**Parâmetros**:<br/>
+AnoMin: Ano inicial.<br/>
+AnoMax: Ano final.<br/>
 **Retorno**: JSON contendo as colunas: Categoria, Produto, Quantidade (L), Valor Total (R$)
 
-2. Processamento de Uvas
-**Endpoint**: /processamento/<Opcao>/<AnoMin>/<AnoMax>
-**Descrição**: Extrai dados de processamento de uvas, como uvas viníferas e híbridas, em kg.
-**Opções de Processamento**:
-Viníferas: subopt_01
-Híbridas Americanas: subopt_02
-Uvas de Mesa: subopt_03
-Sem Classificação: subopt_04
+2. Processamento de Uvas<br/>
+**Endpoint**: /processamento/<Opcao>/<AnoMin>/<AnoMax><br/>
+**Descrição**: Extrai dados de processamento de uvas, como uvas viníferas e híbridas, em kg.<br/>
+**Opções de Processamento**:<br/>
+Viníferas: subopt_01<br/>
+Híbridas Americanas: subopt_02<br/>
+Uvas de Mesa: subopt_03<br/>
+Sem Classificação: subopt_04<br/>
 **Retorno**: JSON contendo a quantidade processada (em kg) por categoria de produto.
 
-3. Comercialização de Produtos
-**Endpoint**: /comercializacao/<AnoMin>/<AnoMax>
-**Descrição**: Retorna dados de comercialização de produtos vitivinícolas, incluindo valor total e quantidade em litros.
-**Parâmetros**:
-AnoMin: Ano inicial.
-AnoMax: Ano final.
-**Retorno**: JSON com as colunas:Categoria, Produto, Quantidade (L), Valor Total (R$).
+3. Comercialização de Produtos<br/>
+**Endpoint**: /comercializacao/<AnoMin>/<AnoMax><br/>
+**Descrição**: Retorna dados de comercialização de produtos vitivinícolas, incluindo valor total e quantidade em litros.<br/>
+**Parâmetros**:<br/>
+AnoMin: Ano inicial.<br/>
+AnoMax: Ano final.<br/>
+**Retorno**: JSON com as colunas:Categoria, Produto, Quantidade (L), Valor Total (R$).<br/>
 
 
 
