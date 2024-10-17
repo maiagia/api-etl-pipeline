@@ -1,10 +1,9 @@
 # Tech Challenge 3MLET
 **Grupo 17**<br/> 
 **Membros:**<br/> 
-Kleryton de Souza Maria,<br/> 
-Lucas Paim de Paula,<br/> 
-Maiara Giavoni,<br/> 
-Rafael Tafelli dos Santos
+Kleryton de Souza Maria, Lucas Paim de Paula,Maiara Giavoni,Rafael Tafelli dos Santos.
+
+## Sumário
 
 ## Sumário
 
@@ -12,18 +11,22 @@ Rafael Tafelli dos Santos
 - [Fonte dos Dados](#fonte-dos-dados)
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Descrição das Pastas](#descrição-das-pastas)
-  - [API](#1-api)
-  - [ETL](#2-etl)
-  - [Model](#3-model)
+  - [1. API](#1-api)
+  - [2. ETL](#2-etl)
+  - [3. Model](#3-model)
 - [API: Coleta de Dados de Produção e Exportação](#api-coleta-de-dados-de-produção-e-exportação)
-  - [Produção de Uvas](#1-produção-de-uvas)
-  - [Exportação de Uvas](#2-exportação-de-uvas)
+  - [1. Produção de Uvas](#1-produção-de-uvas)
+  - [2. Exportação de Uvas](#2-exportação-de-uvas)
 - [Como Executar o Projeto](#como-executar-o-projeto)
   - [Pré-requisitos](#pré-requisitos)
   - [Execução do Pipeline ETL](#execução-do-pipeline-etl)
   - [Executar o Modelo de Previsão](#executar-o-modelo-de-previsão)
 - [Arquitetura do Projeto](#arquitetura-do-projeto)
 - [Benefícios da Arquitetura](#benefícios-da-arquitetura)
+- [Contribuições](#contribuições)
+- [Exemplos de Uso](#exemplos-de-uso)
+- [Licença](#licença)
+- [Referências e Leitura Adicional](#referências-e-leitura-adicional)
 
 
 ## Descrição do Projeto
@@ -189,4 +192,17 @@ Os dados retornados estarão em formato JSON, contendo informações sobre:
   -  Produto: Tipo de produto (ex: vinho, suco).
   -  Quantidade (L): Quantidade produzida em litros.
   -  Valor Total (R$): Valor total da produção em reais.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE). Sinta-se à vontade para usar, modificar e distribuir este software, desde que mantenha os créditos apropriados.
+
+---
+
+## Referências e Leitura Adicional
+
+- [Documentação do Prophet](https://facebook.github.io/prophet/docs/quick_start.html)
+- [BeautifulSoup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [VitiBrasil - Embrapa](http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01)
+
 
