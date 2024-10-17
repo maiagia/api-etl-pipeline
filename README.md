@@ -86,6 +86,14 @@ A pasta `etl/` contém as funções responsáveis pelo pipeline de Extração, T
 - **`src/main.py`**: Arquivo principal que orquestra o pipeline ETL completo.
 - **`tests/`**: Contém os arquivos de testes unitários para garantir que o pipeline e as APIs funcionem corretamente.
 
+### 3. **Model**
+A pasta `model/` é dedicada ao desenvolvimento e implementação de modelos de Machine Learning.
+
+- **`notebook/`**: Notebooks para análise e desenvolvimento dos modelos de previsão.
+  - **`main.ipynb`**: Notebook para desenvolvimento do modelo Prophet, onde são realizados testes e validações.
+- **`src/`**: Código-fonte para os modelos de Machine Learning.
+  - **`modelo.py`**: Implementação do modelo Prophet, que realiza previsões com base nos dados processados de produção e exportação.
+
 ## API: Coleta de Dados de Produção e Exportação
 
 ### Fonte: VitiBrasil (Embrapa)
