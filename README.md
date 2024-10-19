@@ -150,6 +150,17 @@ python model/src/modelo.py
 
 ## Arquitetura do Projeto 
 
+![image](https://github.com/user-attachments/assets/b1a1a529-02e4-4853-bb67-3113218e7a2d)
+
+
+**Fluxo da Arquitetura**:
+1.  API faz o scraping de dados do site VitiBrasil da Embrapa, formando a base do processo.
+2.  O módulo ETL lê dois arquivos JSON:
+    -  Dados de produção agrícola (produto, quantidade de litros e ano).
+    -  Dados de exportação (país, quantidade exportada em kg, valor e ano).
+3.  O módulo ETL transforma esses dados e gera um arquivo CSV.
+4.  O modelo Prophet lê o CSV para análise e previsão.
+
 ```plaintext
 ```plaintext
 +----------------+          +---------------+         +---------------+          +-----------+
