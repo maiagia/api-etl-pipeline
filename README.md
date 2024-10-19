@@ -167,7 +167,6 @@ python model/src/modelo.py
 ### Benefícios da Arquitetura
   -  Modularidade: Cada componente (API, ETL, modelos) é isolado, facilitando a manutenção e expansão.
   -  Escalabilidade: O pipeline pode ser facilmente escalado para processar volumes maiores de dados.
-  -  Automação Completa: Desde a coleta dos dados até a previsão, o processo é completamente automatizado.
 
 ## Contribuições
 
