@@ -150,7 +150,8 @@ python model/src/modelo.py
 
 ## Arquitetura do Projeto 
 
-![image](https://github.com/user-attachments/assets/b1a1a529-02e4-4853-bb67-3113218e7a2d)
+
+![Diagrama sem nome drawio (2)](https://github.com/user-attachments/assets/49898e25-e35a-4df8-b8bc-47f63f1f8659)
 
 
 **Fluxo da Arquitetura**:
@@ -161,16 +162,7 @@ python model/src/modelo.py
 3.  O módulo ETL transforma esses dados e gera um arquivo CSV.
 4.  O modelo Prophet lê o CSV para análise e previsão.
 
-```plaintext
-```plaintext
-+----------------+          +---------------+         +---------------+          +-----------+
-|                |          |               |         |               |          |           |
-| API Vitibrasil | -------> | ETL Pipeline  | ----->  |  Data Output  | ----->   |  Prophet  |
-|                |          | (Extração,    |         | (CSV, JSON)   |          | (Modelo)  |
-|                |          | Transformação |         |               |          |           |
-+----------------+          |  e Carga)     |         +---------------+          +-----------+
-                             +--------------+                                   
-```
+
 
 ### Benefícios da Arquitetura
   -  Modularidade: Cada componente (API, ETL, modelos) é isolado, facilitando a manutenção e expansão.
