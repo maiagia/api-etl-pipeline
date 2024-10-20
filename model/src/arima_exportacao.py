@@ -8,22 +8,22 @@ from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 from statsmodels.tsa.stattools import adfuller
 from itertools import product
 
-# Função para carregar os dados
-def carregar_dados():
-    caminho_producao = r"C:\Users\lucas\Downloads\dados_producao.csv"
-    df_producao = pd.read_csv(caminho_producao)
+# Função para carregar os dados de exportação
+def carregar_dados_exportacao():
+    caminho_exportacao = r"C:\Users\lucas\Documents\GitHub\api-etl-pipeline\etl\output\dados_exportacao.csv"
+    df_exportacao = pd.read_csv(caminho_exportacao)
 
-    # Transformar ano em datetime e verificar duplicatas
-    df_producao['ano'] = pd.to_datetime(df_producao['ano'], format='%Y')
+    # Transformar 'ano' em datetime e verificar duplicatas
+    df_exportacao['ano'] = pd.to_datetime(df_exportacao['ano'], format='%Y')
     
-    # Remover duplicatas somando valores de 'total_litros' para o mesmo ano
-    df_producao = df_producao.groupby('ano').agg({'total_litros': 'sum'}).reset_index()
+    # Remover duplicatas somando valores de 'quantidade_kg' para o mesmo ano
+    df_exportacao = df_exportacao.groupby('ano').agg({'quantidade_kg': 'sum'}).reset_index()
 
     # Definir 'ano' como índice e garantir a frequência anual
-    df_producao.set_index('ano', inplace=True)
-    df_producao = df_producao.asfreq('YS')  # Definir a frequência anual
+    df_exportacao.set_index('ano', inplace=True)
+    df_exportacao = df_exportacao.asfreq('YS')  # Definir a frequência anual
     
-    return df_producao
+    return df_exportacao
 
 # Testar se a série é estacionária com o ADF Test
 def testar_estacionariedade(serie):
@@ -37,7 +37,7 @@ def testar_estacionariedade(serie):
 
 # Função para diferenciar a série
 def diferenciar_serie(df):
-    df['y_diff'] = df['total_litros'].diff().dropna()
+    df['y_diff'] = df['quantidade_kg'].diff().dropna()
     return df.dropna()
 
 # Função para normalizar os dados
@@ -49,7 +49,7 @@ def normalizar_dados(df):
 # Função para treinar o modelo ARIMA
 def treinar_arima(df, order):
     modelo = ARIMA(df['y_diff'], order=order)
-    modelo_fit = modelo.fit()  # Remover o solver que causava o erro
+    modelo_fit = modelo.fit()
     previsoes = modelo_fit.forecast(steps=10)
     return modelo_fit, previsoes
 
@@ -100,29 +100,29 @@ def plot_acf_pacf(df):
 
 # Função principal
 def main():
-    df_producao = carregar_dados()
+    df_exportacao = carregar_dados_exportacao()
 
     # Testar estacionariedade antes e depois da diferenciação
     print("Antes da diferenciação:")
-    testar_estacionariedade(df_producao['total_litros'])
+    testar_estacionariedade(df_exportacao['quantidade_kg'])
 
-    df_producao = diferenciar_serie(df_producao)
+    df_exportacao = diferenciar_serie(df_exportacao)
 
     print("\nApós a diferenciação:")
-    testar_estacionariedade(df_producao['y_diff'])
+    testar_estacionariedade(df_exportacao['y_diff'])
 
     # Normalizar os dados
-    df_producao, scaler = normalizar_dados(df_producao)
+    df_exportacao, scaler = normalizar_dados(df_exportacao)
 
     # Plotar ACF e PACF
-    plot_acf_pacf(df_producao)
+    plot_acf_pacf(df_exportacao)
 
     # Realizar grid search para ARIMA
     p_values = range(0, 4)
     d_values = range(0, 2)
     q_values = range(0, 4)
 
-    grid_search_arima(df_producao, p_values, d_values, q_values)
+    grid_search_arima(df_exportacao, p_values, d_values, q_values)
 
 if __name__ == "__main__":
     main()
