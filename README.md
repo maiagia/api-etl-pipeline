@@ -31,7 +31,7 @@ Kleryton de Souza Maria, Lucas Paim de Paula,Maiara Giavoni,Rafael Tafelli dos S
 
 ## Descrição do Projeto
 
-Este projeto realiza um pipeline completo de ETL (Extração, Transformação e Carga) com dados vitivinícolas extraídos de APIs públicas da Embrapa. Após a extração e processamento dos dados, são aplicados modelos de previsão com Prophet para identificar tendências futuras, especialmente relacionadas à produção e comercialização de uvas e derivados (vinhos, sucos, etc.). O projeto permite uma análise automatizada e preditiva de dados de vitivinicultura no Brasil.
+Este projeto é composto por três módulos interligados: uma API que coleta dados do site VitiBrasil da Embrapa via scraping, um módulo de ETL que transforma dados brutos em informações estruturadas, e um Modelo de Previsão que utiliza o algoritmo Prophet para identificar padrões e prever tendências no setor vinícola. Essa abordagem oferece insights valiosos para produtores e exportadores, permitindo decisões informadas.
 
 **Fonte dos Dados**: Site VitiBrasil
 O site da Embrapa Uva e Vinho [VitiBrasil](http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01) é a fonte principal de dados. Ele fornece informações detalhadas sobre a produção de uvas, exportações, comercialização e processamento de uvas por ano. O projeto acessa diretamente tabelas HTML desse portal para transformar os dados em formatos utilizáveis.
