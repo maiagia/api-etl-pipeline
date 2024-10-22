@@ -148,14 +148,18 @@ python model/src/modelo.py
 ![diagramanovo drawio](https://github.com/user-attachments/assets/7a0f0fb7-e799-4fed-8688-8b20dc228795)
 
 **Fluxo da Arquitetura**:
-1.  API faz o scraping de dados do site VitiBrasil da Embrapa, formando a base do processo.
-2.  O módulo ETL lê dois arquivos JSON:
-    -  Dados de produção agrícola (produto, quantidade de litros e ano).
-    -  Dados de exportação (país, quantidade exportada em kg, valor e ano).
-3.  O módulo ETL transforma esses dados e gera um arquivo CSV.
-4.  O modelo Prophet lê o CSV para análise e previsão.
+1.  API: A API realiza o scraping dos dados do site VitiBrasil da Embrapa, extraindo informações sobre a produção agrícola e exportação de uvas. Esses dados brutos formam a base para o pipeline.
 
+2.  ETL (Extração, Transformação e Carga): O módulo ETL processa os dados extraídos pela API, lendo dois arquivos JSON:
 
+Dados de produção agrícola: Informações sobre o produto (tipo de uva), quantidade produzida (em litros) e o ano correspondente.
+Dados de exportação: Detalhes sobre o país de destino, quantidade exportada (em kg), valor gerado (em USD) e o ano correspondente.
+Esses dados são limpos, transformados e estruturados, resultando em um arquivo CSV final que será usado para previsões.
+
+3.  Modelos de Previsão:
+
+Prophet: O modelo Prophet utiliza o arquivo CSV gerado pelo ETL para fazer previsões de produção e exportação de vinhos, focando em tendências de longo prazo e sazonalidade.
+ARIMA: O modelo ARIMA também lê o mesmo arquivo CSV, mas é empregado para capturar padrões de curto prazo e realizar previsões mais detalhadas sobre variações de produção e exportação de vinhos.
 
 ### Benefícios da Arquitetura
   -  Modularidade: Cada componente (API, ETL, modelos) é isolado, facilitando a manutenção e expansão.
