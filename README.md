@@ -4,7 +4,32 @@
 Kleryton de Souza Maria, Lucas Paim de Paula,Maiara Giavoni,Rafael Tafelli dos Santos.
 
 ## Sumário
-
+## Sumário
+- [Descrição do Projeto](#descrição-do-projeto)
+- [Fonte dos Dados](#fonte-dos-dados)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+  - [1. API](#1-api)
+  - [2. ETL](#2-etl)
+  - [3. Model](#3-model)
+- [API: Coleta de Dados de Produção e Exportação](#api-coleta-de-dados-de-produção-e-exportação)
+  - [Endpoints Disponíveis](#endpoints-disponíveis)
+    - [1. Produção de Uvas](#1-produção-de-uvas)
+    - [2. Exportação de Uvas](#2-exportação-de-uvas)
+- [Pipeline ETL](#pipeline-etl)
+- [Modelos de Previsão](#modelos-de-previsão)
+  - [1. Prophet](#1-prophet)
+  - [2. ARIMA](#2-arima)
+  - [3. Comparação dos Modelos](#3-comparação-dos-modelos)
+- [Como Executar o Projeto](#como-executar-o-projeto)
+  - [Pré-requisitos](#pré-requisitos)
+  - [Execução do Pipeline ETL](#execução-do-pipeline-etl)
+  - [Executar o Modelo de Previsão](#executar-o-modelo-de-previsão)
+- [Desenho de Arquitetura](#desenho-de-arquitetura)
+- [Contribuições](#contribuições)
+  - [Como Contribuir](#como-contribuir)
+- [Exemplos de Uso](#exemplos-de-uso)
+- [Licença](#licença)
+- [Referências e Leitura Adicional](#referências-e-leitura-adicional)
 
 ## Descrição do Projeto
 
