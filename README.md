@@ -49,7 +49,6 @@ A pasta `model/` contém os modelos preditivos usados para prever as tendências
 
 ## API: Coleta de Dados de Produção e Exportação
 
-### Fonte: VitiBrasil (Embrapa)
 As APIs fazem requisições ao site **VitiBrasil**, da **Embrapa**, para extrair dados sobre a produção e exportação de uvas no Brasil.
 
 ### Endpoints Disponíveis
@@ -144,11 +143,9 @@ python model/src/modelo.py
 ```
 2. Resultados: As previsões geradas serão armazenadas no diretório de saída.
 
-## Arquitetura do Projeto 
+## Desenho de Arquitetura:
 
-
-![Diagrama sem nome drawio (2)](https://github.com/user-attachments/assets/49898e25-e35a-4df8-b8bc-47f63f1f8659)
-
+![diagramanovo drawio](https://github.com/user-attachments/assets/7a0f0fb7-e799-4fed-8688-8b20dc228795)
 
 **Fluxo da Arquitetura**:
 1.  API faz o scraping de dados do site VitiBrasil da Embrapa, formando a base do processo.
