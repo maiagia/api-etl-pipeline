@@ -5,9 +5,6 @@ Kleryton de Souza Maria, Lucas Paim de Paula,Maiara Giavoni,Rafael Tafelli dos S
 
 ## Sumário
 
-## Sumário
-
-
 
 ## Descrição do Projeto
 
