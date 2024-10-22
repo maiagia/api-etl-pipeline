@@ -166,7 +166,7 @@ python model/src/modelo.py
 
 ## Desenho de Arquitetura:
 
-![diagramanovo drawio](https://github.com/user-attachments/assets/7a0f0fb7-e799-4fed-8688-8b20dc228795)
+![Diagrama sem nome drawio (4)](https://github.com/user-attachments/assets/e2ec26e0-c4c9-41b4-a250-9bafda043069)
 
 **Fluxo da Arquitetura**:
 1.  API: A API realiza o scraping dos dados do site VitiBrasil da Embrapa, extraindo informações sobre a produção agrícola e exportação de uvas. Esses dados brutos formam a base para o pipeline.
