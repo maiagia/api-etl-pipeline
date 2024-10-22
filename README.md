@@ -10,7 +10,6 @@ Kleryton de Souza Maria, Lucas Paim de Paula,Maiara Giavoni,Rafael Tafelli dos S
 
 Este projeto é composto por três módulos interligados: uma API que coleta dados do site VitiBrasil da Embrapa via scraping, um módulo de ETL que transforma dados brutos em informações estruturadas, e um Modelo de Previsão para identificar padrões e prever tendências no setor vinícola. Essa abordagem oferece insights valiosos para produtores e exportadores, permitindo decisões informadas.
 
-**Fonte dos Dados**: Site VitiBrasil
 O site da Embrapa Uva e Vinho [VitiBrasil](http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01) é a fonte principal de dados. Ele fornece informações detalhadas sobre a produção de uvas, exportações, comercialização e processamento de uvas por ano. O projeto acessa diretamente tabelas HTML desse portal para transformar os dados em formatos utilizáveis.
                        
 ## Estrutura do Projeto
