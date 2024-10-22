@@ -7,31 +7,11 @@ Kleryton de Souza Maria, Lucas Paim de Paula,Maiara Giavoni,Rafael Tafelli dos S
 
 ## Sumário
 
-- [Descrição do Projeto](#descrição-do-projeto)
-- [Fonte dos Dados](#fonte-dos-dados)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Descrição das Pastas](#descrição-das-pastas)
-  - [1. API](#1-api)
-  - [2. ETL](#2-etl)
-  - [3. Model](#3-model)
-- [API: Coleta de Dados de Produção e Exportação](#api-coleta-de-dados-de-produção-e-exportação)
-  - [1. Produção de Uvas](#1-produção-de-uvas)
-  - [2. Exportação de Uvas](#2-exportação-de-uvas)
-- [Como Executar o Projeto](#como-executar-o-projeto)
-  - [Pré-requisitos](#pré-requisitos)
-  - [Execução do Pipeline ETL](#execução-do-pipeline-etl)
-  - [Executar o Modelo de Previsão](#executar-o-modelo-de-previsão)
-- [Arquitetura do Projeto](#arquitetura-do-projeto)
-- [Benefícios da Arquitetura](#benefícios-da-arquitetura)
-- [Contribuições](#contribuições)
-- [Exemplos de Uso](#exemplos-de-uso)
-- [Licença](#licença)
-- [Referências e Leitura Adicional](#referências-e-leitura-adicional)
 
 
 ## Descrição do Projeto
 
-Este projeto é composto por três módulos interligados: uma API que coleta dados do site VitiBrasil da Embrapa via scraping, um módulo de ETL que transforma dados brutos em informações estruturadas, e um Modelo de Previsão que utiliza o algoritmo Prophet para identificar padrões e prever tendências no setor vinícola. Essa abordagem oferece insights valiosos para produtores e exportadores, permitindo decisões informadas.
+Este projeto é composto por três módulos interligados: uma API que coleta dados do site VitiBrasil da Embrapa via scraping, um módulo de ETL que transforma dados brutos em informações estruturadas, e um Modelo de Previsão para identificar padrões e prever tendências no setor vinícola. Essa abordagem oferece insights valiosos para produtores e exportadores, permitindo decisões informadas.
 
 **Fonte dos Dados**: Site VitiBrasil
 O site da Embrapa Uva e Vinho [VitiBrasil](http://vitibrasil.cnpuv.embrapa.br/index.php?opcao=opt_01) é a fonte principal de dados. Ele fornece informações detalhadas sobre a produção de uvas, exportações, comercialização e processamento de uvas por ano. O projeto acessa diretamente tabelas HTML desse portal para transformar os dados em formatos utilizáveis.
@@ -40,59 +20,32 @@ O site da Embrapa Uva e Vinho [VitiBrasil](http://vitibrasil.cnpuv.embrapa.br/in
 
 ```bash
 api-etl-pipeline/
-├── api/
-│   ├── __init__.py                    # Inicialização do módulo da API
-│   ├── api.py                         # Endpoints das APIs de produção e exportação
-│   ├── constantes.py                  # URLs e parâmetros utilizados pelas APIs
-│   ├── utilidades.py                  # Funções utilitárias para scraping e normalização de dados
-├── etl/
-│   ├── data/                          # Dados brutos extraídos das APIs
-│   │   ├── exportacao.json            # Dados de exportação em formato JSON
-│   │   └── producao.json              # Dados de produção em formato JSON
-│   ├── notebook/                      # Notebooks para exploração e desenvolvimento
-│   │   └── main.ipynb                 # Notebook para execução do pipeline ETL
-│   ├── output/                        # Dados processados após as transformações
-│   │   ├── dados_exportacao.csv       # Dados de exportação processados
-│   │   └── dados_producao.csv         # Dados de produção processados
-│   ├── src/                           # Código-fonte do pipeline ETL
-│   │   └── main.py                    # Orquestração do pipeline ETL completo
-│   ├── tests/                         # Testes unitários do pipeline e APIs
-│   │   ├── .coverage                  # Relatório de cobertura dos testes
-│   │   └── test_main.py               # Testes unitários do pipeline e APIs
-├── model/                             # Pasta com os modelos de Machine Learning
-│   ├── notebook/                      # Notebooks para análise e desenvolvimento dos modelos
-│   │   └── main.ipynb                 # Notebook para desenvolvimento do modelo Prophet
-│   ├── src/                           # Código-fonte para os modelos
-│   │   └── modelo.py                  # Implementação do modelo Prophet para previsão
-├── .gitignore                         # Arquivos e diretórios a serem ignorados pelo Git
+├── api/                               # Módulo responsável por coletar dados via scraping
+├── etl/                               # Pipeline de ETL que processa os dados brutos
+├── model/                             # Modelos de previsão de séries temporais
+├── .gitignore                         # Arquivos ignorados pelo Git
 ├── README.md                          # Documentação do projeto
 ├── requirements.txt                   # Dependências do projeto
 ```
+
 ## Descrição das Pastas
 
 ### 1. **API**
-A pasta `api/` contém os endpoints e funções relacionadas à coleta de dados a partir do site da Embrapa VitiBrasil. Estes dados são extraídos em formato JSON e usados no pipeline de ETL.
-
-- **`api.py`**: Define os endpoints que acessam dados de produção e exportação de uvas.
-- **`constantes.py`**: URLs e parâmetros de consulta utilizados nas requisições HTTP.
-- **`utilidades.py`**: Funções para manipulação de HTML, normalização de texto e extração de tabelas de dados via **BeautifulSoup**.
+A pasta `api/` contém os scripts de scraping que coletam dados diretamente do site VitiBrasil da Embrapa. Ela extrai informações de produção e exportação de uvas em diferentes anos e formata esses dados em JSON para que possam ser utilizados no pipeline ETL.
 
 ### 2. **ETL**
-A pasta `etl/` contém as funções responsáveis pelo pipeline de Extração, Transformação e Carga dos dados.
+A pasta `etl/` contém o pipeline de Extração, Transformação e Carga (ETL), que processa os dados brutos coletados pela API. Este pipeline é responsável por limpar, transformar e estruturar os dados, que serão usados posteriormente para as previsões.
 
-- **`data/`**: Armazena os dados brutos extraídos das APIs (JSON).
-- **`output/`**: Armazena os dados processados e transformados, prontos para análises.
-- **`notebook/main.ipynb`**: Notebook utilizado para testes e desenvolvimento do pipeline ETL.
-- **`src/main.py`**: Arquivo principal que orquestra o pipeline ETL completo.
-- **`tests/`**: Contém os arquivos de testes unitários para garantir que o pipeline e as APIs funcionem corretamente.
+Componentes principais do ETL:
+- **Extração**: O scraping coleta os dados do VitiBrasil em formato HTML, e os transforma em JSON.
+- **Transformação**: Limpeza e padronização dos dados brutos para remover inconsistências e formatar colunas corretamente.
+- **Carga**: Os dados são carregados em arquivos CSV para serem utilizados nos modelos de previsão.
 
 ### 3. **Model**
-A pasta `model/` é dedicada ao desenvolvimento e implementação de modelos de Machine Learning.
+A pasta `model/` contém os modelos preditivos usados para prever as tendências de produção e exportação de vinhos. São implementados dois modelos principais:
+- **Prophet**: Modelo de séries temporais desenvolvido pelo Facebook para previsão com sazonalidade.
+- **ARIMA**: Um dos modelos estatísticos mais comuns para análise de séries temporais, focado em captura de padrões autoregressivos.
 
-- **`notebook/`**: Notebooks para análise e desenvolvimento dos modelos de previsão.
-  - **`main.ipynb`**: Notebook para desenvolvimento do modelo Prophet, onde são realizados testes e validações.
-- **`src/`**: Código-fonte para os modelos de Machine Learning.
-  - **`modelo.py`**: Implementação do modelo Prophet, que realiza previsões com base nos dados processados de produção e exportação.
 
 ## API: Coleta de Dados de Produção e Exportação
 
@@ -123,6 +76,49 @@ As APIs fazem requisições ao site **VitiBrasil**, da **Embrapa**, para extrair
   - **Produto**
   - **Quantidade (Kg)**
   - **Valor (US$)**
+ 
+## Pipeline ETL
+
+O pipeline de ETL realiza as seguintes etapas:
+
+1. **Coleta de Dados**: Usa a API desenvolvida para fazer scraping dos dados de produção e exportação do site VitiBrasil.
+2. **Processamento**: Os dados brutos são transformados para remover ruídos, lidar com valores ausentes e normalizar as colunas para facilitar a análise.
+3. **Estruturação**: Após a transformação, os dados são estruturados em CSV, categorizados por ano, tipo de uva, país de exportação e outros fatores relevantes.
+
+O objetivo do pipeline é criar uma base de dados que possa ser utilizada diretamente pelos modelos de previsão, permitindo análise histórica e antecipação de futuras tendências no setor vitivinícola.
+
+## Modelos de Previsão
+
+Os modelos de previsão são utilizados para antecipar a produção e exportação de vinhos com base em dados históricos. O objetivo é fornecer previsões que ajudem no planejamento estratégico de produtores e exportadores do setor vitivinícola.
+
+### 1. **Prophet**
+O Prophet é um modelo de séries temporais desenvolvido pelo Facebook, especialmente útil para dados com sazonalidade e eventos recorrentes. Ele permite que se façam previsões diárias, mensais ou anuais, capturando tendências e padrões ao longo do tempo.
+
+**Características principais**:
+- Adequado para dados com variações sazonais.
+- Suporta inclusão de feriados ou eventos especiais.
+- Rápido e eficaz para conjuntos de dados maiores.
+
+**Aplicação no projeto**:
+No Tech Challenge 3MLET, o Prophet é utilizado para prever a produção e exportação de vinhos nos próximos anos, com base em dados históricos extraídos do VitiBrasil. Ele ajuda a identificar variações sazonais de produção e padrões de exportação ao longo do tempo.
+
+### 2. **ARIMA**
+ARIMA (AutoRegressive Integrated Moving Average) é um dos modelos mais populares para séries temporais, especialmente para dados não estacionários, onde as médias e variações mudam com o tempo.
+
+**Características principais**:
+- Adequado para dados onde há tendência ou variações em diferentes períodos.
+- Baseado em três componentes: autoregressão (AR), diferenciação (I) e média móvel (MA).
+- Flexível, podendo ajustar-se a diferentes tipos de séries temporais.
+
+**Aplicação no projeto**:
+No projeto, o ARIMA é utilizado para prever a produção de vinhos com base em padrões históricos de exportação e produção, fornecendo uma análise mais detalhada das tendências de curto prazo.
+
+### 3. **Comparação dos Modelos**
+Os dois modelos são utilizados de maneira complementar:
+- O Prophet é melhor para captar sazonalidade e eventos recorrentes.
+- O ARIMA é mais robusto para dados com tendências de curto prazo e variações sutis.
+
+Ambos os modelos oferecem diferentes perspectivas e ajudam a fornecer previsões mais precisas e completas para os produtores e exportadores de vinho.
 
 ## Como Executar o Projeto
 
