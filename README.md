@@ -4,7 +4,6 @@
 Kleryton de Souza Maria, Lucas Paim de Paula,Maiara Giavoni,Rafael Tafelli dos Santos.
 
 ## Sumário
-## Sumário
 - [Descrição do Projeto](#descrição-do-projeto)
 - [Fonte dos Dados](#fonte-dos-dados)
 - [Estrutura do Projeto](#estrutura-do-projeto)
