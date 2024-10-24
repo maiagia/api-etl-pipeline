@@ -3,6 +3,8 @@
 **Membros:**<br/> 
 Kleryton de Souza Maria, Lucas Paim de Paula,Maiara Giavoni,Rafael Tafelli dos Santos.
 
+**O video de apresentação está disponivel em : https://github.com/maiagia/api-etl-pipeline/releases/tag/%23apresentacao**
+
 ## Sumário
 - [Descrição do Projeto](#descrição-do-projeto)
 - [Fonte dos Dados](#fonte-dos-dados)
