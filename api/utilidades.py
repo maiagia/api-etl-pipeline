@@ -31,6 +31,19 @@ class MLET3():
     
 
     def requestFind(self, pURL: str, pHeader: dict, pBeautifulSoupFindName: str, pBeautifulSoupFindAttr: dict, pBeautifulSoupParser: str = 'html.parser') -> Tag:
+        """
+            Realiza uma requisição HTTP para a URL especificada e retorna a tag encontrada no conteúdo HTML.
+
+            Parâmetros:
+            - pURL (str): A URL do recurso a ser requisitado.
+            - pHeader (dict): Um dicionário contendo os cabeçalhos HTTP a serem enviados na requisição.
+            - pBeautifulSoupFindName (str): O nome da tag HTML a ser encontrada.
+            - pBeautifulSoupFindAttr (dict): Um dicionário com os atributos a serem utilizados na busca da tag HTML.
+            - pBeautifulSoupParser (str, opcional): O parser a ser utilizado pelo BeautifulSoup. O padrão é 'html.parser'.
+
+            Retorna:
+            - Tag: A tag HTML encontrada, ou None se não for encontrada.
+        """
         vRequest = get(url=pURL, headers=pHeader).text
         vBeautifulSoupTags = BeautifulSoup(vRequest, features=pBeautifulSoupParser).find(pBeautifulSoupFindName, pBeautifulSoupFindAttr)
         
@@ -38,6 +51,18 @@ class MLET3():
     
 
     def extrairTabelaHTML(self, pTextoHTML: Tag, pHierarquiaTabela: dict, pTipoChaveHierarquia: str, pQuantidadeColunasTabelaHTML: int) -> DataFrame:
+        """
+            Extrai uma tabela de um documento HTML e a converte em um DataFrame.
+
+            Parâmetros:
+            - pTextoHTML (Tag): A tag HTML que contém a tabela a ser extraída.
+            - pHierarquiaTabela (dict): Um dicionário que define a hierarquia das colunas na tabela.
+            - pTipoChaveHierarquia (str): O tipo de chave a ser usado para acessar a hierarquia.
+            - pQuantidadeColunasTabelaHTML (int): O número esperado de colunas na tabela HTML.
+
+            Retorna:
+            - DataFrame: Um DataFrame contendo os dados extraídos da tabela HTML.
+        """
         vDictDataFrame = {}
 
         # Criar colunas do DataFrame
@@ -86,7 +111,21 @@ class MLET3():
 
     def HTMLTableRequest(self, pLinkRequest: str, pHeaderRequest: dict, pBeautifulSoupFindName: str,
                          pBeautifulSoupFindAttr: dict, pHierarquiaTabela: dict, pTipoChaveHierarquia: str, pQuantidadeColunasTabelaHTML: int) -> DataFrame:
-        
+        """
+            Realiza uma requisição para um link especificado, extrai uma tabela HTML e a converte em um DataFrame.
+
+            Parâmetros:
+            - pLinkRequest (str): O link do recurso a ser requisitado.
+            - pHeaderRequest (dict): Um dicionário contendo os cabeçalhos HTTP a serem enviados na requisição.
+            - pBeautifulSoupFindName (str): O nome da tag HTML que contém a tabela a ser extraída.
+            - pBeautifulSoupFindAttr (dict): Um dicionário com os atributos a serem utilizados na busca da tag HTML.
+            - pHierarquiaTabela (dict): Um dicionário que define a hierarquia das colunas na tabela.
+            - pTipoChaveHierarquia (str): O tipo de chave a ser usado para acessar a hierarquia.
+            - pQuantidadeColunasTabelaHTML (int): O número esperado de colunas na tabela HTML.
+
+            Retorna:
+            - DataFrame: Um DataFrame contendo os dados extraídos da tabela HTML.
+        """
         vBaseFinal = DataFrame()
 
         # Request

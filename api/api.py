@@ -1,8 +1,8 @@
 from utilidades import MLET3, DataFrame
 from pandas import concat, to_numeric
 from constantes import *
-from flask import Flask
-from flask_pydantic_spec import FlaskPydanticSpec
+from flask import Flask, jsonify
+from flask_pydantic_spec import FlaskPydanticSpec, Response
 
 from requests import get
 
@@ -11,6 +11,18 @@ u = MLET3()
 vServer = Flask(__name__)
 vSpec = FlaskPydanticSpec('flask', title='API MLET3')
 vSpec.register(vServer)
+
+@vServer.errorhandler(400)
+def requisicao_invalida(erro):
+    return jsonify({"erro": "Requisiaoo invalida"}), 400
+
+@vServer.errorhandler(404)
+def pagina_nao_encontrada(erro):
+    return jsonify({"erro": "Pagina nao encontrada"}), 404
+
+@vServer.errorhandler(500)
+def erro_servidor(erro):
+    return jsonify({"erro": "Erro interno do servidor"}), 500
 
 def pegarDados(pLink: str, pHeader: dict, pBeautifulSoupFindName: str
                , pBeautifulSoupFindAttr: dict, pHierarquiaTabela: dict
@@ -117,7 +129,19 @@ def pegarDados_Producao(pAnoMin: int, pAnoMax: int) -> str:
 @vServer.get('/processamento/<string:pOpcao>/<int:pAnoMin>/<int:pAnoMax>')
 def pegarDados_Processamento(pAnoMin: int, pAnoMax: int, pOpcao: str) -> str:
 
-    vLink = '&'.join(['?'.join([LINK_VITIBRASIL, ABA_PROCESSAMENTO]), pOpcao])
+    vOpcoes = {
+       'VINIFERAS' : ABA_PROCESSAMENTO_SUBOPCAO_VINIFERAS,
+       'AMERICANAS_HIBRIDAS' : ABA_PROCESSAMENTO_SUBOPCAO_AMERICANAS_HIBRIDAS,
+       'MESA' : ABA_PROCESSAMENTO_SUBOPCAO_UVAS_MESA,
+       'SEM_CLASSIFICACAO' : ABA_PROCESSAMENTO_SUBOPCAO_SEM_CLASSIFICACAO
+    }
+
+    vResultadoOpcoes = vOpcoes.get(pOpcao.upper())
+
+    if not vResultadoOpcoes:
+        return f'As opções válidas são {vOpcoes.keys()}'
+
+    vLink = '&'.join(['?'.join([LINK_VITIBRASIL, ABA_PROCESSAMENTO]), vResultadoOpcoes])
 
     vHierarquiaTabela = {        
         'tb_item': ['CATEGORIA', 'QUANTIDADE_TOTAL_CATEGORIA_KG'],
@@ -143,7 +167,7 @@ def pegarDados_Processamento(pAnoMin: int, pAnoMax: int, pOpcao: str) -> str:
         pNormalizarColunas=True
     )
 
-    return vBase#.to_json(orient='records', lines=False, force_ascii=False)
+    return vBase.to_json(orient='records', lines=False, force_ascii=False)
 
 @vServer.get('/comercializacao/<int:pAnoMin>/<int:pAnoMax>')
 def pegarDados_Comercializacao(pAnoMin: int, pAnoMax: int) -> str:
@@ -176,7 +200,90 @@ def pegarDados_Comercializacao(pAnoMin: int, pAnoMax: int) -> str:
 
     return vBase.to_json(orient='records', lines=False, force_ascii=False)
 
+@vServer.get('/importacao/<string:pOpcao>/<int:pAnoMin>/<int:pAnoMax>')
+def pegarDados_Importacao(pAnoMin: int, pAnoMax: int, pOpcao: str) -> str:
 
+    vOpcoes = {
+        'VINHOS_MESA': ABA_IMPORTACAO_SUBOPCAO_VINHOS_MESA,
+        'ESPUMANTES': ABA_IMPORTACAO_SUBOPCAO_ESPUMANTES,
+        'UVAS_FRESCAS': ABA_IMPORTACAO_SUBOPCAO_UVAS_FRESCAS,
+        'UVAS_PASSAS': ABA_IMPORTACAO_SUBOPCAO_UVAS_PASSAS,
+        'SUCO_UVA': ABA_IMPORTACAO_SUBOPCAO_SUCO_UVA
+    }
+
+    vResultadoOpcoes = vOpcoes.get(pOpcao.upper())
+
+    if not vResultadoOpcoes:
+        return f'As opções válidas são {vOpcoes.keys()}'
+
+    vLink = '&'.join(['?'.join([LINK_VITIBRASIL, ABA_IMPORTACAO]), vResultadoOpcoes])
+
+    vHierarquiaTabela = {        
+        'tb_item': ['PAIS', 'QUANTIDADE_KG', 'VALOR_US']
+    }
+
+    vBase = pegarDados(
+        pLink=vLink,
+        pHeader=HEADER,
+        pBeautifulSoupFindName='table',
+        pBeautifulSoupFindAttr={'class': 'tb_base tb_dados'},
+        pHierarquiaTabela=vHierarquiaTabela,
+        pTipoChaveHierarquia='class',
+        pQuantidadeColunasTabelaHTML=3,
+        pAnoMin=pAnoMin,
+        pAnoMax=pAnoMax,
+        pValorColunaOrigem='IMPORTACAO',
+        pColunas_ffill=[],
+        pColunasRemoverPrimeiraLinha=[],
+        pColunasToNumeric=['QUANTIDADE_KG', 'VALOR_US'],
+        pQueryDataFrameFinal='PAIS.str.upper().str.strip() != "TOTAL"',
+        pColunasToNumeric_FillNa=True,
+        pNormalizarColunas=True
+    )
+
+    return vBase.to_json(orient='records', lines=False, force_ascii=False)
+
+@vServer.get('/exportacao/<string:pOpcao>/<int:pAnoMin>/<int:pAnoMax>')
+def pegarDados_Exportacao(pAnoMin: int, pAnoMax: int, pOpcao: str) -> str:
+
+    vOpcoes = {
+        'VINHOS_MESA': ABA_EXPORTACAO_SUBOPCAO_VINHOS_MESA,
+        'ESPUMANTES': ABA_EXPORTACAO_SUBOPCAO_ESPUMANTES,
+        'UVAS_FRESCAS': ABA_EXPORTACAO_SUBOPCAO_UVAS_FRESCAS,
+        'SUCO_UVA': ABA_EXPORTACAO_SUBOPCAO_SUCO_UVA
+    }
+
+    vResultadoOpcoes = vOpcoes.get(pOpcao.upper())
+
+    if not vResultadoOpcoes:
+        return f'As opções válidas são {vOpcoes.keys()}'
+
+    vLink = '&'.join(['?'.join([LINK_VITIBRASIL, ABA_EXPORTACAO]), vResultadoOpcoes])
+
+    vHierarquiaTabela = {        
+        'tb_item': ['PAIS', 'QUANTIDADE_KG', 'VALOR_US']
+    }
+
+    vBase = pegarDados(
+        pLink=vLink,
+        pHeader=HEADER,
+        pBeautifulSoupFindName='table',
+        pBeautifulSoupFindAttr={'class': 'tb_base tb_dados'},
+        pHierarquiaTabela=vHierarquiaTabela,
+        pTipoChaveHierarquia='class',
+        pQuantidadeColunasTabelaHTML=3,
+        pAnoMin=pAnoMin,
+        pAnoMax=pAnoMax,
+        pValorColunaOrigem='EXPORTACAO',
+        pColunas_ffill=[],
+        pColunasRemoverPrimeiraLinha=[],
+        pColunasToNumeric=['QUANTIDADE_KG', 'VALOR_US'],
+        pQueryDataFrameFinal='PAIS.str.upper().str.strip() != "TOTAL"',
+        pColunasToNumeric_FillNa=True,
+        pNormalizarColunas=True
+    )
+
+    return vBase.to_json(orient='records', lines=False, force_ascii=False)
 
 vServer.run()
 
